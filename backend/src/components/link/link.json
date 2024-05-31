@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_link_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "linkText": {
+      "type": "string",
+      "required": true,
+      "default": "Click here for more information!"
+    },
+    "linkAddress": {
+      "type": "string",
+      "required": true,
+      "default": "https://www.ridetowalk.org/"
+    }
+  }
+}
