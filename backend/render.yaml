@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: strapi
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm build
+    startCommand: npm start
+    healthCheckPath: /_health
+    autoDeploy: false
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 1337
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_SSL
+        value: false
+      - key: DATABASE_HOST
+        sync: false
+      - key: DATABASE_PORT
+        sync: false
+      - key: TRANSFER_TOKEN_SALT
+        sync: false
+      - key: API_TOKEN_SALT
+        sync: false
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: strapi
+          property: database
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: strapi
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: strapi
+          property: password
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_JWT_SECRET
+        sync: false
+      - key: APP_KEYS
+        sync: false
+
+databases:
+  - name: strapi
+    plan: starter
