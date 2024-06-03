@@ -17,9 +17,13 @@ services:
       - key: DATABASE_SSL
         value: false
       - key: DATABASE_HOST
-        sync: false
+        fromDatabase:
+          name: strapi
+          property: host
       - key: DATABASE_PORT
-        sync: false
+        fromDatabase:
+          name: strapi
+          property: port
       - key: TRANSFER_TOKEN_SALT
         sync: false
       - key: API_TOKEN_SALT
