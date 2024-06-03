@@ -68,7 +68,7 @@ export async function fetchAPIClient(requestUrl: string, mergedOptions = {}) {
 export function buildStrapiRequest(path: string, urlParamsObject = {}, options = {}) {
   // Merge default and user options
   const mergedOptions = {
-    next: { revalidate: 1 },
+    // next: { revalidate: 1 },
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.STRAPI_TOKEN ? process.env.STRAPI_TOKEN : process.env.NEXT_PUBLIC_API_TOKEN}`,
