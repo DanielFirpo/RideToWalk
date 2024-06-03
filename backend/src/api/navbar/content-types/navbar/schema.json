@@ -152,15 +152,6 @@
       },
       "type": "string"
     },
-    "buttonText": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "default": "Donate Now"
-    },
     "homeLinks": {
       "type": "component",
       "repeatable": true,
@@ -219,6 +210,25 @@
     "horseBoardingLinks": {
       "type": "component",
       "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "link.link"
+    },
+    "slogan": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "Healing on Horseback"
+    },
+    "donateButton": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true

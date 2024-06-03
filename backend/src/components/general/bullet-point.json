@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_bullet_points",
+  "info": {
+    "displayName": "Bullet Point",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bulletPointText": {
+      "type": "string",
+      "required": true,
+      "default": "This is a bullet point"
+    }
+  }
+}

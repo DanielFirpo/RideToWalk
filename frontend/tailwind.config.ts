@@ -5,6 +5,11 @@ const config = {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  variants: {
+    extend: {
+      backgroundSize: ["group-hover"],
+    },
+  },
   theme: {
     container: {
       center: true,
@@ -14,6 +19,16 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        baskerville: ["var(--font-libre-baskerville)"],
+        baskervilleItalic: ["var(--font-libre-baskerville-italic)"],
+        alatsi: ["var(--font-alatsi)"],
+        grotesk: ["var(--font-grotesk)"],
+      },
+      screens: {
+        "1.5xl": "1350px",
+        devOnlyDeleteAfterDone: "320px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -25,16 +40,23 @@ const config = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down 300ms ease-out forwards",
+        "accordion-up": "accordion-up 300ms ease-out forwards",
       },
       colors: {
         oliveGreen: "#282917",
         rustyBrown: "#ac4f3d",
-        terracottaOrange: "#cb6942",
+        terracottaOrange: "#BC5A34",
         winterHazel: "#DBCA94",
         eggshell: "#efe9db",
         metalicCopper: "#783022",
+        dawn: "#e0ded7",
+      },
+      boxShadow: {
+        "3xl": "0 35px 80px -7px rgba(0, 0, 0, .3)",
+      },
+      fontWeight: {
+        gigabold: "800",
       },
     },
   },

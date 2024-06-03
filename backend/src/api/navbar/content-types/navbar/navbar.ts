@@ -25,13 +25,14 @@ export interface Navbar {
     twitterLink?: string;
     linkedInLink?: string;
     snapchatLink?: string;
-    buttonText?: string;
     homeLinks: Link[];
     aboutUsLinks: Link[];
     takeActionLinks: Link[];
     ridingProgramLinks: Link[];
     eventsAndActivitiesLinks: Link[];
     horseBoardingLinks: Link[];
+    slogan?: string;
+    donateButton?: Link;
     locale: string;
     localizations?: { data: Navbar[] };
   };
@@ -53,13 +54,14 @@ export interface Navbar_Plain {
   twitterLink?: string;
   linkedInLink?: string;
   snapchatLink?: string;
-  buttonText?: string;
   homeLinks: Link_Plain[];
   aboutUsLinks: Link_Plain[];
   takeActionLinks: Link_Plain[];
   ridingProgramLinks: Link_Plain[];
   eventsAndActivitiesLinks: Link_Plain[];
   horseBoardingLinks: Link_Plain[];
+  slogan?: string;
+  donateButton?: Link_Plain;
   locale: string;
   localizations?: Navbar_Plain[];
 }
@@ -81,13 +83,14 @@ export interface Navbar_NoRelations {
   twitterLink?: string;
   linkedInLink?: string;
   snapchatLink?: string;
-  buttonText?: string;
   homeLinks: Link_NoRelations[];
   aboutUsLinks: Link_NoRelations[];
   takeActionLinks: Link_NoRelations[];
   ridingProgramLinks: Link_NoRelations[];
   eventsAndActivitiesLinks: Link_NoRelations[];
   horseBoardingLinks: Link_NoRelations[];
+  slogan?: string;
+  donateButton?: Link_NoRelations;
   locale: string;
   localizations?: Navbar[];
 }
@@ -109,13 +112,14 @@ export interface Navbar_AdminPanelLifeCycle {
   twitterLink?: string;
   linkedInLink?: string;
   snapchatLink?: string;
-  buttonText?: string;
   homeLinks: Link_Plain[];
   aboutUsLinks: Link_Plain[];
   takeActionLinks: Link_Plain[];
   ridingProgramLinks: Link_Plain[];
   eventsAndActivitiesLinks: Link_Plain[];
   horseBoardingLinks: Link_Plain[];
+  slogan?: string;
+  donateButton?: Link_Plain;
   locale: string;
   localizations?: Navbar[];
 }
