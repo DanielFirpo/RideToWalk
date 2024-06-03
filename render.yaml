@@ -3,8 +3,8 @@ services:
     name: strapi
     runtime: node
     plan: starter
-    buildCommand: cd backend && npm install && npm build
-    startCommand: cd backend && npm start
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm run start
     healthCheckPath: /_health
     autoDeploy: false
     envVars:
