@@ -37,14 +37,14 @@ export default async function Footer() {
       <div className="font-baskerville ml-12 text-sm leading-6 md:ml-5 lg:w-1/2">
         <div className="font-alatsi mb-5 flex w-fit flex-col items-center">
           <Image
-            className="h-28 w-auto pt-1"
+            className="h-40 w-auto pt-1"
             src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.logo.data.attributes.url}
             alt=""
             width={footerData.attributes.logo.data.attributes.width}
             height={footerData.attributes.logo.data.attributes.height}
           />
-          <h2 className="font-gigabold text-center text-2xl uppercase">{footerData.attributes.logoTitle}</h2>
-          <h3 className="text-center text-sm font-bold uppercase">{footerData.attributes.logoSubtitle}</h3>
+          {/* <h2 className="font-gigabold text-center text-2xl uppercase">{footerData.attributes.logoTitle}</h2>
+          <h3 className="text-center text-sm font-bold uppercase">{footerData.attributes.logoSubtitle}</h3> */}
         </div>
 
         <address className="mb-5 not-italic">{footerData.attributes.address}</address>

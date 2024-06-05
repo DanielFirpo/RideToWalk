@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body * {
-  -webkit-text-size-adjust: 90%;
+  font-synthesis: none;
 }

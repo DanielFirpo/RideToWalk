@@ -26,9 +26,6 @@ export default async function Home() {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
-      </Head>
       <main>
         <section className="w-full bg-black">
           <div
@@ -154,16 +151,17 @@ export default async function Home() {
         <section className="relative flex flex-col flex-wrap md:flex-row">
           <div className="absolute left-[calc(50%-5.5rem)] top-[calc(50%-5.5rem)] hidden h-44 w-44 rotate-45 justify-center bg-white pl-1 pt-1 md:flex">
             <div className="font-alatsi -rotate-45">
+              {/*  max-h-32 max-w-32  */}
               <Image
-                className="mx-auto max-h-32 max-w-32 px-5 pt-1"
+                className="m-auto px-3 pt-1"
                 src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
                 alt=""
                 width={navData.attributes.logo.data.attributes.width}
                 height={navData.attributes.logo.data.attributes.height}
                 priority
               />
-              <h2 className="font-gigabold mx-auto text-center text-lg uppercase">{navData.attributes.name}</h2>
-              <h3 className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</h3>
+              {/* <h2 className="font-gigabold mx-auto text-center text-lg uppercase">{navData.attributes.name}</h2>
+              <h3 className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</h3> */}
             </div>
           </div>
           <div

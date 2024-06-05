@@ -31,17 +31,17 @@ export default async function Navbar() {
   return (
     <>
       <header className="relative text-nowrap">
-        <div className="font-alatsi absolute ml-12 h-full w-36 bg-white">
+        <div className="font-alatsi absolute ml-12 flex h-full w-36 items-center bg-white text-center">
           <Image
-            className="mx-auto max-h-[6.8rem] max-w-[6.8rem] px-5 pt-1"
+            className="p-1"
             src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
             alt=""
             width={navData.attributes.logo.data.attributes.width}
             height={navData.attributes.logo.data.attributes.height}
             priority
           />
-          <div className="font-gigabold mx-auto text-center uppercase">{navData.attributes.name}</div>
-          <div className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</div>
+          {/* <div className="font-gigabold mx-auto text-center text-xl uppercase">{navData.attributes.name}</div>
+          <div className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</div> */}
         </div>
         <div className="absolute ml-48 border-l-[.9rem] border-t-[2.5rem] border-solid border-l-[#707a75] border-t-transparent"></div>
         <div className="font-grotesk flex h-10 w-full items-center bg-oliveGreen pl-52 text-xs 2xl:text-sm">
