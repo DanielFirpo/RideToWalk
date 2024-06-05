@@ -48,9 +48,9 @@ export default async function Navbar() {
           <div className="hidden w-full md:flex">
             {navData?.attributes.announcementText && (
               <Marquee className="mx-8 !hidden pl-6 xl:!flex" pauseOnHover={true}>
-                <span className="px-2 text-winterHazel">{navData?.attributes.announcementText}</span>
+                <span className="px-2 text-[#dfbebe]">{navData?.attributes.announcementText}</span>
                 {navData?.attributes.announcementLink && (
-                  <Link className="pr-4 text-winterHazel underline" href={navData?.attributes.announcementLink?.linkAddress}>
+                  <Link className="pr-4 text-[#dfbebe] underline" href={navData?.attributes.announcementLink?.linkAddress}>
                     {navData?.attributes.announcementLink?.linkText}
                   </Link>
                 )}

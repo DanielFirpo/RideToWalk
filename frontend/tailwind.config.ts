@@ -44,12 +44,12 @@ const config = {
         "accordion-up": "accordion-up 300ms ease-out forwards",
       },
       colors: {
-        oliveGreen: "#282917",
-        rustyBrown: "#ac4f3d",
-        terracottaOrange: "#BC5A34",
-        winterHazel: "#DBCA94",
-        eggshell: "#efe9db",
-        metalicCopper: "#783022",
+        oliveGreen: "#1e1111", //"#282917",
+        rustyBrown: "#ac3d3d", //"#ac4f3d",
+        terracottaOrange: "#bc3434", //"#BC5A34",
+        winterHazel: "#db9494", //"#DBCA94",
+        eggshell: "#efdbdb", //"#efe9db",
+        metalicCopper: "#782222", //"#783022",
         dawn: "#e0ded7",
       },
       boxShadow: {
