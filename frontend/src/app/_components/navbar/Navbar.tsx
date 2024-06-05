@@ -40,8 +40,8 @@ export default async function Navbar() {
             height={navData.attributes.logo.data.attributes.height}
             priority
           />
-          <h2 className="font-gigabold mx-auto text-center uppercase">{navData.attributes.name}</h2>
-          <h3 className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</h3>
+          <div className="font-gigabold mx-auto text-center uppercase">{navData.attributes.name}</div>
+          <div className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</div>
         </div>
         <div className="absolute ml-48 border-l-[.9rem] border-t-[2.5rem] border-solid border-l-[#707a75] border-t-transparent"></div>
         <div className="font-grotesk flex h-10 w-full items-center bg-oliveGreen pl-52 text-xs 2xl:text-sm">
