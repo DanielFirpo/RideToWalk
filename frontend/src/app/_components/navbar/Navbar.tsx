@@ -31,7 +31,7 @@ export default async function Navbar() {
   return (
     <>
       <header className="relative text-nowrap">
-        <div className="font-alatsi absolute ml-12 h-full w-36 bg-winterHazel">
+        <div className="font-alatsi absolute ml-12 h-full w-36 bg-white">
           <Image
             className="mx-auto max-h-[6.8rem] max-w-[6.8rem] px-5 pt-1"
             src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}

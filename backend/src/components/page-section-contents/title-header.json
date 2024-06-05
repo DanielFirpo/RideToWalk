@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_section_contents_title_headers",
+  "info": {
+    "displayName": "titleHeader",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Page Title Goes Here",
+      "required": true
+    }
+  }
+}

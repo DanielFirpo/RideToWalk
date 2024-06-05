@@ -14,6 +14,7 @@ export default {
     menu: {
       logo: AuthLogo,
     },
+
     // Override or extend the theme
     theme: {
       colors: {

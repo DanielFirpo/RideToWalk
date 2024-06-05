@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_page_section_contents_banners",
+  "info": {
+    "displayName": "banner",
+    "icon": "oneToOne"
+  },
+  "options": {},
+  "attributes": {
+    "leftText": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
