@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-08T21:46:09.071Z"
+    "x-generation-date": "2024-06-08T22:57:14.531Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6182,37 +6182,44 @@
       },
       "PageLocalizationRequest": {
         "required": [
-          "slug",
           "title",
+          "slug",
           "description",
+          "page",
           "locale"
         ],
         "type": "object",
         "properties": {
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "page": {
             "type": "array",
             "items": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
-                },
-                {
-                  "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
-                },
-                {
-                  "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
-                },
-                {
                   "$ref": "#/components/schemas/PageSectionContentsBannerComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsImageCarouselComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsSubtitleComponent"
@@ -6221,22 +6228,16 @@
                   "$ref": "#/components/schemas/PageSectionContentsTextComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
                 }
               ]
             }
-          },
-          "slug": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
           },
           "locale": {
             "type": "string"
@@ -6251,36 +6252,43 @@
         "properties": {
           "data": {
             "required": [
-              "slug",
               "title",
-              "description"
+              "slug",
+              "description",
+              "page"
             ],
             "type": "object",
             "properties": {
+              "title": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
               "page": {
                 "type": "array",
                 "items": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
-                    },
-                    {
-                      "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
-                    },
-                    {
-                      "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
-                    },
-                    {
                       "$ref": "#/components/schemas/PageSectionContentsBannerComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
                     },
                     {
                       "$ref": "#/components/schemas/PageSectionContentsImageCarouselComponent"
                     },
                     {
-                      "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                      "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
                     },
                     {
-                      "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
+                      "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
                     },
                     {
                       "$ref": "#/components/schemas/PageSectionContentsSubtitleComponent"
@@ -6289,22 +6297,16 @@
                       "$ref": "#/components/schemas/PageSectionContentsTextComponent"
                     },
                     {
-                      "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                      "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
                     },
                     {
-                      "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
+                      "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
                     }
                   ]
                 }
-              },
-              "slug": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -6430,35 +6432,42 @@
       "Page": {
         "type": "object",
         "required": [
-          "slug",
           "title",
-          "description"
+          "slug",
+          "description",
+          "page"
         ],
         "properties": {
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "page": {
             "type": "array",
             "items": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
-                },
-                {
-                  "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
-                },
-                {
-                  "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
-                },
-                {
                   "$ref": "#/components/schemas/PageSectionContentsBannerComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsHalfAndHalfComponent"
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsImageCarouselComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsPaddingComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsSubtitleComponent"
@@ -6467,22 +6476,16 @@
                   "$ref": "#/components/schemas/PageSectionContentsTextComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsButtonComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsTitleHeaderComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/PageSectionContentsQuoteComponent"
+                  "$ref": "#/components/schemas/PageSectionContentsVideoComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
                 }
               ]
             }
-          },
-          "slug": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -6565,6 +6568,58 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "PageSectionContentsBannerComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "leftText": {
+            "type": "string"
+          },
+          "facebookLink": {
+            "type": "string"
+          },
+          "instagramLink": {
+            "type": "string"
+          },
+          "tiktokLink": {
+            "type": "string"
+          },
+          "youtubeLink": {
+            "type": "string"
+          },
+          "googleLink": {
+            "type": "string"
+          },
+          "twitterLink": {
+            "type": "string"
+          },
+          "linkedInLink": {
+            "type": "string"
+          },
+          "snapchatLink": {
+            "type": "string"
+          }
+        }
+      },
+      "PageSectionContentsButtonComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "link": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
           }
         }
       },
@@ -7220,6 +7275,221 @@
           }
         }
       },
+      "PageSectionContentsImageCarouselComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "images": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {},
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {},
+                        "related": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "attributes": {
+                                    "type": "object",
+                                    "properties": {}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "folder": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "folderPath": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "createdBy": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "updatedBy": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "PageSectionContentsPaddingComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "pixels": {
+            "type": "integer"
+          }
+        }
+      },
+      "PageSectionContentsQuoteComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          }
+        }
+      },
+      "PageSectionContentsSubtitleComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "PageSectionContentsTextComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
       "PageSectionContentsTitleHeaderComponent": {
         "type": "object",
         "properties": {
@@ -7387,197 +7657,6 @@
           }
         }
       },
-      "PageSectionContentsBannerComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "leftText": {
-            "type": "string"
-          },
-          "facebookLink": {
-            "type": "string"
-          },
-          "instagramLink": {
-            "type": "string"
-          },
-          "tiktokLink": {
-            "type": "string"
-          },
-          "youtubeLink": {
-            "type": "string"
-          },
-          "googleLink": {
-            "type": "string"
-          },
-          "twitterLink": {
-            "type": "string"
-          },
-          "linkedInLink": {
-            "type": "string"
-          },
-          "snapchatLink": {
-            "type": "string"
-          }
-        }
-      },
-      "PageSectionContentsImageCarouselComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "images": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "attributes": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "alternativeText": {
-                          "type": "string"
-                        },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {},
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number",
-                          "format": "float"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "provider_metadata": {},
-                        "related": {
-                          "type": "object",
-                          "properties": {
-                            "data": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {
-                                  "id": {
-                                    "type": "number"
-                                  },
-                                  "attributes": {
-                                    "type": "object",
-                                    "properties": {}
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "folder": {
-                          "type": "object",
-                          "properties": {
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number"
-                                },
-                                "attributes": {
-                                  "type": "object",
-                                  "properties": {}
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "folderPath": {
-                          "type": "string"
-                        },
-                        "createdAt": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "updatedAt": {
-                          "type": "string",
-                          "format": "date-time"
-                        },
-                        "createdBy": {
-                          "type": "object",
-                          "properties": {
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number"
-                                },
-                                "attributes": {
-                                  "type": "object",
-                                  "properties": {}
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "updatedBy": {
-                          "type": "object",
-                          "properties": {
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number"
-                                },
-                                "attributes": {
-                                  "type": "object",
-                                  "properties": {}
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
       "PageSectionContentsWideImageComponent": {
         "type": "object",
         "properties": {
@@ -7728,82 +7807,6 @@
           },
           "addPaddingOnLeftAndRight": {
             "type": "boolean"
-          }
-        }
-      },
-      "PageSectionContentsPaddingComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "pixels": {
-            "type": "integer"
-          }
-        }
-      },
-      "PageSectionContentsSubtitleComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          }
-        }
-      },
-      "PageSectionContentsTextComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          }
-        }
-      },
-      "PageSectionContentsButtonComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "link": {
-            "$ref": "#/components/schemas/LinkLinkComponent"
-          }
-        }
-      },
-      "PageSectionContentsQuoteComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "__component": {
-            "type": "string"
-          },
-          "quote": {
-            "type": "string"
-          },
-          "attribution": {
-            "type": "string"
           }
         }
       },

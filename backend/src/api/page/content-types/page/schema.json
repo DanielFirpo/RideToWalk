@@ -16,38 +16,6 @@
     }
   },
   "attributes": {
-    "page": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "dynamiczone",
-      "components": [
-        "page-section-contents.half-and-half",
-        "page-section-contents.title-header",
-        "page-section-contents.video",
-        "page-section-contents.banner",
-        "page-section-contents.image-carousel",
-        "page-section-contents.wide-image",
-        "page-section-contents.padding",
-        "page-section-contents.subtitle",
-        "page-section-contents.text",
-        "page-section-contents.button",
-        "page-section-contents.quote"
-      ]
-    },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid",
-      "default": "name-of-page",
-      "required": true,
-      "maxLength": 80
-    },
     "title": {
       "pluginOptions": {
         "i18n": {
@@ -59,16 +27,49 @@
       "required": true,
       "minLength": 3
     },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
     "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "type": "text",
+      "default": "Learn about Ride to Walk, a non-profit in Penryn, CA, dedicated to enhancing lives through therapeutic horseback riding. Discover our mission, history, and the impact of our hippotherapy programs.",
       "required": true,
-      "minLength": 20,
-      "default": "Learn about Ride to Walk, a non-profit in Penryn, CA, dedicated to enhancing lives through therapeutic horseback riding. Discover our mission, history, and the impact of our hippotherapy programs."
+      "minLength": 3
+    },
+    "page": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "page-section-contents.banner",
+        "page-section-contents.button",
+        "page-section-contents.half-and-half",
+        "page-section-contents.image-carousel",
+        "page-section-contents.padding",
+        "page-section-contents.quote",
+        "page-section-contents.subtitle",
+        "page-section-contents.text",
+        "page-section-contents.title-header",
+        "page-section-contents.video",
+        "page-section-contents.wide-image"
+      ],
+      "required": true,
+      "min": 2
     }
   }
 }

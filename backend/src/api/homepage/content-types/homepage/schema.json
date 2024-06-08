@@ -24,7 +24,7 @@
       },
       "type": "string",
       "required": true,
-      "maxLength": 200,
+      "maxLength": 210,
       "default": "Discover the transformative effects of horse riding for children and adults with special needs, from learning disabilities to quadriplegia."
     },
     "heroImage": {
@@ -295,17 +295,17 @@
       "required": true
     },
     "carouselImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true
+      }
     }
   }
 }

@@ -37,6 +37,8 @@ export default async function Page({ params }: { params: { page: string } }) {
   };
 
   const pageData: ExtendedPageType & {} = (await fetchAPI("/pages", { filters: { slug: { $eq: params.page } } })).data[0];
+
+  console.log("page data", pageData);
   if (!pageData) return notFound();
   return <main>{pageData.attributes.page.map((pageSection, i) => getPageSection(pageSection, i))}</main>;
 }

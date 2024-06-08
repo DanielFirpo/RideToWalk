@@ -929,7 +929,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }> &
       Attribute.SetMinMaxLength<{
-        maxLength: 200;
+        maxLength: 210;
       }> &
       Attribute.DefaultTo<'Discover the transformative effects of horse riding for children and adults with special needs, from learning disabilities to quadriplegia.'>;
     heroImage: Attribute.Media &
@@ -1435,37 +1435,6 @@ export interface ApiPagePage extends Schema.CollectionType {
     };
   };
   attributes: {
-    page: Attribute.DynamicZone<
-      [
-        'page-section-contents.half-and-half',
-        'page-section-contents.title-header',
-        'page-section-contents.video',
-        'page-section-contents.banner',
-        'page-section-contents.image-carousel',
-        'page-section-contents.wide-image',
-        'page-section-contents.padding',
-        'page-section-contents.subtitle',
-        'page-section-contents.text',
-        'page-section-contents.button',
-        'page-section-contents.quote'
-      ]
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slug: Attribute.UID &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }> &
-      Attribute.DefaultTo<'name-of-page'>;
     title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1477,7 +1446,14 @@ export interface ApiPagePage extends Schema.CollectionType {
         minLength: 3;
       }> &
       Attribute.DefaultTo<'About Us'>;
-    description: Attribute.String &
+    slug: Attribute.UID<'api::page.page', 'title'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1485,9 +1461,36 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }> &
       Attribute.SetMinMaxLength<{
-        minLength: 20;
+        minLength: 3;
       }> &
       Attribute.DefaultTo<'Learn about Ride to Walk, a non-profit in Penryn, CA, dedicated to enhancing lives through therapeutic horseback riding. Discover our mission, history, and the impact of our hippotherapy programs.'>;
+    page: Attribute.DynamicZone<
+      [
+        'page-section-contents.banner',
+        'page-section-contents.button',
+        'page-section-contents.half-and-half',
+        'page-section-contents.image-carousel',
+        'page-section-contents.padding',
+        'page-section-contents.quote',
+        'page-section-contents.subtitle',
+        'page-section-contents.text',
+        'page-section-contents.title-header',
+        'page-section-contents.video',
+        'page-section-contents.wide-image'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 2;
+        },
+        number
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
