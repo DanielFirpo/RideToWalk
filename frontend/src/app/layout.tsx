@@ -3,6 +3,8 @@ import { Libre_Baskerville, Alatsi, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/navbar/Navbar";
 import Footer from "./_components/footer/Footer";
+import { fetchAPI } from "./_utils/strapiApi";
+import { MetaData as MetaDataType } from "@contentTypes/meta-data/content-types/meta-data/meta-data";
 
 const baskerville = Libre_Baskerville({
   weight: ["400", "700"],
@@ -33,24 +35,73 @@ const grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Ride to Walk - Therapeutic Horseback Riding in Penryn, CA | Empowering Individuals through Hippotherapy",
-    default: "Ride to Walk - Therapeutic Horseback Riding in Penryn, CA | Empowering Individuals through Hippotherapy",
-    template: "%s | Ride to Walk - Therapeutic Horseback Riding in Penryn, CA",
-  },
-  description:
-    "Ride to Walk, located in Penryn, CA, offers therapeutic horseback riding programs for individuals with neurological disabilities. Our hippotherapy sessions improve physical, emotional, and cognitive well-being. Founded in 1985, we are a non-profit dedicated to empowering our community through the healing power of horses.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData: MetaDataType = (await fetchAPI("/meta-data", { populate: "*" })).data;
 
-export default function RootLayout({
+  return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL ?? ""),
+    title: {
+      absolute: metaData.attributes.homepageTitle,
+      default: metaData.attributes.homepageTitle,
+      template: metaData.attributes.subsequentPageTitleTemplate,
+    },
+    description: metaData.attributes.homepageDescription,
+    openGraph: {
+      type: "website",
+      // url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+      title: "Ride to Walk",
+      description: metaData.attributes.openGraphDescription,
+      siteName: "Ride to Walk",
+      images: metaData.attributes.openGraphImage?.data.attributes.url,
+    },
+    applicationName: "Ride to Walk",
+    keywords: [
+      "Ride to Walk",
+      "Ranch",
+      "Therapeutic horseback riding",
+      "Hippotherapy",
+      "Equine therapy",
+      "Disabilities",
+      "Penryn, CA",
+      "Non-profit organization",
+    ],
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const metaData: MetaDataType = (await fetchAPI("/meta-data", { populate: "*" })).data;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Ride to Walk",
+    url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    logo: process.env.NEXT_PUBLIC_FRONTEND_URL + metaData.attributes.openGraphImage?.data.attributes.url,
+    description: metaData.attributes.homepageDescription,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2460 Delmar Ave",
+      addressLocality: "Penryn",
+      addressRegion: "CA",
+      postalCode: "95663",
+      addressCountry: "US",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-916-791-2747",
+      contactType: "customer service",
+    },
+    sameAs: ["https://www.facebook.com/RideToWalk", "https://www.instagram.com/ride_to_walk/"],
+  };
+
   return (
     <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
       <body className="bg-slate-200 blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Navbar></Navbar>
         <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-3xl shadow-slate-500">
           {children}

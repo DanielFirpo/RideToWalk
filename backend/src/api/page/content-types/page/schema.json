@@ -47,6 +47,28 @@
       "default": "name-of-page",
       "required": true,
       "maxLength": 80
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "About Us",
+      "required": true,
+      "minLength": 3
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "minLength": 20,
+      "default": "Learn about Ride to Walk, a non-profit in Penryn, CA, dedicated to enhancing lives through therapeutic horseback riding. Discover our mission, history, and the impact of our hippotherapy programs."
     }
   }
 }
