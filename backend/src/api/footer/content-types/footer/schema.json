@@ -115,6 +115,19 @@
       "type": "string",
       "required": true,
       "default": "©2024 Ride to Walk, a 501(c)(3) nonprofit organization. All rights reserved."
+    },
+    "leftImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
     }
   }
 }

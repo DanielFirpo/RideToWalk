@@ -447,6 +447,13 @@ export interface ApiFooterFooter extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'\u00A92024 Ride to Walk, a 501(c)(3) nonprofit organization. All rights reserved.'>;
+    leftImage: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,10 +927,15 @@ export interface ApiPagePage extends Schema.CollectionType {
       [
         'page-section-contents.half-and-half',
         'page-section-contents.title-header',
-        'page-section-contents.image-carousel',
         'page-section-contents.video',
-        'page-section-contents.image',
-        'page-section-contents.banner'
+        'page-section-contents.banner',
+        'page-section-contents.image-carousel',
+        'page-section-contents.wide-image',
+        'page-section-contents.padding',
+        'page-section-contents.subtitle',
+        'page-section-contents.text',
+        'page-section-contents.button',
+        'page-section-contents.quote'
       ]
     > &
       Attribute.SetPluginOptions<{

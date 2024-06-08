@@ -1,10 +1,15 @@
 import Banner from "../_components/page_sections/Banner";
 import HalfAndHalf from "../_components/page_sections/HalfAndHalf";
-import Image from "../_components/page_sections/Image";
+import WideImage from "../_components/page_sections/WideImage";
 import ImageCarousel from "../_components/page_sections/ImageCarousel";
 import TitleHeader from "../_components/page_sections/TitleHeader";
 import Video from "../_components/page_sections/Video";
 import React from "react";
+import Padding from "../_components/page_sections/Padding";
+import Subtitle from "../_components/page_sections/Subtitle";
+import Button from "../_components/page_sections/Button";
+import Text from "../_components/page_sections/Text";
+import Quote from "../_components/page_sections/Quote";
 
 export function getBackgroundImage(srcSet = "") {
   const imageSet = srcSet
@@ -37,8 +42,8 @@ export const getPageSection = ({ __component, ...rest }: { __component: string }
     case "page-section-contents.title-header":
       PageSection = TitleHeader;
       break;
-    case "page-section-contents.image":
-      PageSection = Image;
+    case "page-section-contents.wide-image":
+      PageSection = WideImage;
       break;
     case "page-section-contents.half-and-half":
       PageSection = HalfAndHalf;
@@ -46,7 +51,22 @@ export const getPageSection = ({ __component, ...rest }: { __component: string }
     case "page-section-contents.video":
       PageSection = Video;
       break;
+    case "page-section-contents.padding":
+      PageSection = Padding;
+      break;
+    case "page-section-contents.subtitle":
+      PageSection = Subtitle;
+      break;
+    case "page-section-contents.button":
+      PageSection = Button;
+      break;
+    case "page-section-contents.text":
+      PageSection = Text;
+      break;
+    case "page-section-contents.quote":
+      PageSection = Quote;
+      break;
   }
 
-  return PageSection ? <PageSection key={`index-${index}`} {...rest} /> : null;
+  return PageSection ? <PageSection key={`index-${index}`} sectionData={rest} /> : null;
 };

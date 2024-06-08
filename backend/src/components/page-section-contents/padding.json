@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_section_contents_paddings",
+  "info": {
+    "displayName": "padding",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "pixels": {
+      "type": "integer",
+      "default": 50,
+      "required": true,
+      "min": 0
+    }
+  }
+}

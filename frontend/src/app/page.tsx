@@ -42,7 +42,7 @@ export default async function Home() {
                 return (
                   <h1
                     key={line}
-                    className="font-baskerville mt-6 text-center text-xl leading-normal text-white opacity-100 md:text-3xl lg:text-4xl lg:leading-relaxed"
+                    className="mt-6 text-center font-baskerville text-xl leading-normal text-white opacity-100 md:text-3xl lg:text-4xl lg:leading-relaxed"
                   >
                     {line}
                   </h1>
@@ -73,12 +73,12 @@ export default async function Home() {
           >
             {pageData.attributes.missionStatementTitle.split("\\n").map((line) => {
               return (
-                <h2 key={line} className="font-baskerville inline pr-2 text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
+                <h2 key={line} className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
                   {line}
                 </h2>
               );
             })}
-            <h3 className="font-baskervilleItalic py-6 text-lg tracking-wider text-metalicCopper sm:text-2xl">
+            <h3 className="py-6 font-baskervilleItalic text-lg tracking-wider text-metalicCopper sm:text-2xl">
               {pageData.attributes.missionStatementSubtitle}
             </h3>
             <p className="font-grotesk text-sm font-medium leading-relaxed sm:text-base">
@@ -101,7 +101,7 @@ export default async function Home() {
               Your browser does not support the video tag.
             </video>
             <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
-              <p className="font-grotesk text-center text-xs font-medium leading-relaxed text-black sm:text-sm">
+              <p className="text-center font-grotesk text-xs font-medium leading-relaxed text-black sm:text-sm">
                 {pageData.attributes.featuredVideoDescription}
               </p>
             </div>
@@ -115,7 +115,7 @@ export default async function Home() {
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
           />
-          <div className="font-grotesk mx-4 p-6 font-medium leading-relaxed sm:mx-14 lg:mr-14">
+          <div className="mx-4 p-6 font-grotesk font-medium leading-relaxed sm:mx-14 lg:mr-14">
             {pageData.attributes.detailedAboutSectionText.split("\\n").map((line) => {
               const regex = /\\h(.*?)\\h/g;
               const parts = line.split(regex);
@@ -150,7 +150,7 @@ export default async function Home() {
         </section>
         <section className="relative flex flex-col flex-wrap md:flex-row">
           <div className="absolute left-[calc(50%-5.5rem)] top-[calc(50%-5.5rem)] hidden h-44 w-44 rotate-45 justify-center bg-white pl-1 pt-1 md:flex">
-            <div className="font-alatsi -rotate-45">
+            <div className="-rotate-45 font-alatsi">
               {/*  max-h-32 max-w-32  */}
               <Image
                 className="m-auto px-3 pt-1"
@@ -219,7 +219,7 @@ export default async function Home() {
         </section>
         <section className="flex h-24 items-center justify-center bg-eggshell px-4 md:justify-between md:px-14 ">
           <div className="flex items-center text-eggshell md:pr-4">
-            <address className="font-baskervilleItalic py-6 text-center text-base tracking-widest text-metalicCopper sm:text-lg md:text-left md:text-xl">
+            <address className="py-6 text-center font-baskervilleItalic text-base tracking-widest text-metalicCopper sm:text-lg md:text-left md:text-xl">
               <a
                 target="_blank"
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(navData?.attributes.address)}`}
@@ -249,7 +249,7 @@ export default async function Home() {
 
             {navData.attributes.youtubeLink && (
               <a target="_blank" className="flex items-center" href={navData.attributes.youtubeLink} aria-label="YouTube">
-                <span className="icon-[mdi--youtube] h-7 w-7 text-terracottaOrange"></span>
+                <span className="icon-[mdi--youtube] h-8 w-8 text-terracottaOrange"></span>
               </a>
             )}
 
@@ -273,7 +273,7 @@ export default async function Home() {
 
             {navData.attributes.snapchatLink && (
               <a target="_blank" className="flex items-center" href={navData.attributes.snapchatLink} aria-label="Snapchat">
-                <span className="icon-[ri--snapchat-fill] h-6 w-6 text-terracottaOrange"></span>
+                <span className="icon-[ri--snapchat-fill] h-8 w-8 text-terracottaOrange"></span>
               </a>
             )}
           </div>

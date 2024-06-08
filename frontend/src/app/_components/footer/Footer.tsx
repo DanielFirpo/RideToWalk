@@ -34,10 +34,10 @@ export default async function Footer() {
       }}
     >
       <div className="m-10 mr-5 mt-0 hidden w-1/2 bg-eggshell lg:block"></div>
-      <div className="font-baskerville ml-12 text-sm leading-6 md:ml-5 lg:w-1/2">
-        <div className="font-alatsi mb-5 flex w-fit flex-col items-center">
+      <div className="ml-12 font-baskerville text-sm leading-6 md:ml-5 lg:w-1/2">
+        <div className="mb-5 flex w-fit flex-col items-center font-alatsi">
           <Image
-            className="h-40 w-auto pt-1"
+            className="h-48 w-auto pt-1"
             src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.logo.data.attributes.url}
             alt=""
             width={footerData.attributes.logo.data.attributes.width}

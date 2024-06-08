@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_section_contents_texts",
+  "info": {
+    "displayName": "text",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "default": "Paragraph(s) go here",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "You can put an opening title for the paragraph here"
+    }
+  }
+}

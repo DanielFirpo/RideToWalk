@@ -2,12 +2,36 @@
 
 export interface Banner {
   leftText?: string;
+  facebookLink?: string;
+  instagramLink?: string;
+  tiktokLink?: string;
+  youtubeLink?: string;
+  googleLink?: string;
+  twitterLink?: string;
+  linkedInLink?: string;
+  snapchatLink?: string;
 }
 export interface Banner_Plain {
   leftText?: string;
+  facebookLink?: string;
+  instagramLink?: string;
+  tiktokLink?: string;
+  youtubeLink?: string;
+  googleLink?: string;
+  twitterLink?: string;
+  linkedInLink?: string;
+  snapchatLink?: string;
 }
 
 export interface Banner_NoRelations {
   leftText?: string;
+  facebookLink?: string;
+  instagramLink?: string;
+  tiktokLink?: string;
+  youtubeLink?: string;
+  googleLink?: string;
+  twitterLink?: string;
+  linkedInLink?: string;
+  snapchatLink?: string;
 }
 

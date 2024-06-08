@@ -4,13 +4,13 @@ import { Media } from '../../../common/schemas-to-ts/Media';
 import { Media_Plain } from '../../../common/schemas-to-ts/Media';
 
 export interface Image {
-  image: { data: Media };
+  image?: { data: Media };
 }
 export interface Image_Plain {
-  image: Media_Plain;
+  image?: Media_Plain;
 }
 
 export interface Image_NoRelations {
-  image: number;
+  image?: number;
 }
 

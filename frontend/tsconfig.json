@@ -21,7 +21,8 @@
       "@/*": ["./*"],
       "@components/*": ["./src/app/_components/*"],
       "@contentTypes/*": ["../backend/src/api/*"],
-      "@strapiTypes/*": ["../backend/src/common/*"]
+      "@strapiTypes/*": ["../backend/src/common/*"],
+      "@pageSectionTypes/*": ["../backend/src/components/page-section-contents/interfaces/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

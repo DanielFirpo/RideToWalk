@@ -2,8 +2,45 @@
   "collectionName": "components_page_section_contents_half_and_halves",
   "info": {
     "displayName": "halfAndHalf",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "text",
+      "required": true,
+      "default": "Long paragraph goes here."
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.link"
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "Image on Left",
+        "Image on Right"
+      ],
+      "default": "Image on Left",
+      "required": true
+    },
+    "imageDescription": {
+      "type": "string",
+      "default": "A Picture of the Ranch"
+    },
+    "title": {
+      "type": "string",
+      "default": "A Title Can Go Here If You Want."
+    }
+  }
 }

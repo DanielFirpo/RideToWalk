@@ -2,20 +2,23 @@
   "collectionName": "components_page_section_contents_videos",
   "info": {
     "displayName": "video",
-    "icon": "play"
+    "icon": "play",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "video": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "default": "Video description goes here.",
+      "maxLength": 155
     }
   }
 }

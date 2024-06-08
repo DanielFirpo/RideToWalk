@@ -36,9 +36,29 @@ export interface PageSectionContentsBanner extends Schema.Component {
   info: {
     displayName: 'banner';
     icon: 'oneToOne';
+    description: '';
   };
   attributes: {
     leftText: Attribute.String;
+    facebookLink: Attribute.String;
+    instagramLink: Attribute.String;
+    tiktokLink: Attribute.String;
+    youtubeLink: Attribute.String;
+    googleLink: Attribute.String;
+    twitterLink: Attribute.String;
+    linkedInLink: Attribute.String;
+    snapchatLink: Attribute.String;
+  };
+}
+
+export interface PageSectionContentsButton extends Schema.Component {
+  collectionName: 'components_page_section_contents_buttons';
+  info: {
+    displayName: 'button';
+    icon: 'cursor';
+  };
+  attributes: {
+    link: Attribute.Component<'link.link'> & Attribute.Required;
   };
 }
 
@@ -47,8 +67,22 @@ export interface PageSectionContentsHalfAndHalf extends Schema.Component {
   info: {
     displayName: 'halfAndHalf';
     icon: 'layout';
+    description: '';
   };
-  attributes: {};
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    text: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Long paragraph goes here.'>;
+    button: Attribute.Component<'link.link'>;
+    imagePosition: Attribute.Enumeration<['Image on Left', 'Image on Right']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Image on Left'>;
+    imageDescription: Attribute.String &
+      Attribute.DefaultTo<'A Picture of the Ranch'>;
+    title: Attribute.String &
+      Attribute.DefaultTo<'A Title Can Go Here If You Want.'>;
+  };
 }
 
 export interface PageSectionContentsImageCarousel extends Schema.Component {
@@ -56,20 +90,74 @@ export interface PageSectionContentsImageCarousel extends Schema.Component {
   info: {
     displayName: 'imageCarousel';
     icon: 'picture';
+    description: '';
   };
   attributes: {
     images: Attribute.Media & Attribute.Required;
   };
 }
 
-export interface PageSectionContentsImage extends Schema.Component {
-  collectionName: 'components_page_section_contents_images';
+export interface PageSectionContentsPadding extends Schema.Component {
+  collectionName: 'components_page_section_contents_paddings';
   info: {
-    displayName: 'image';
-    icon: 'picture';
+    displayName: 'padding';
+    icon: 'layer';
   };
   attributes: {
-    image: Attribute.Media & Attribute.Required;
+    pixels: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<50>;
+  };
+}
+
+export interface PageSectionContentsQuote extends Schema.Component {
+  collectionName: 'components_page_section_contents_quotes';
+  info: {
+    displayName: 'quote';
+    icon: 'quote';
+    description: '';
+  };
+  attributes: {
+    quote: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Put a quote here. Make sure to not include the quotation marks, since they are added automatically.'>;
+    attribution: Attribute.String &
+      Attribute.DefaultTo<'Somebody who said something, of some organization.'>;
+  };
+}
+
+export interface PageSectionContentsSubtitle extends Schema.Component {
+  collectionName: 'components_page_section_contents_subtitles';
+  info: {
+    displayName: 'subtitle';
+    icon: 'write';
+  };
+  attributes: {
+    text: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'This is a subtitle for a section of the page. '>;
+  };
+}
+
+export interface PageSectionContentsText extends Schema.Component {
+  collectionName: 'components_page_section_contents_texts';
+  info: {
+    displayName: 'text';
+    icon: 'bold';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Paragraph(s) go here'>;
+    title: Attribute.String &
+      Attribute.DefaultTo<'You can put an opening title for the paragraph here'>;
   };
 }
 
@@ -91,9 +179,30 @@ export interface PageSectionContentsVideo extends Schema.Component {
   info: {
     displayName: 'video';
     icon: 'play';
+    description: '';
   };
   attributes: {
     video: Attribute.Media & Attribute.Required;
+    description: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }> &
+      Attribute.DefaultTo<'Video description goes here.'>;
+  };
+}
+
+export interface PageSectionContentsWideImage extends Schema.Component {
+  collectionName: 'components_page_section_contents_wide_images';
+  info: {
+    displayName: 'wideImage';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    addPaddingOnLeftAndRight: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
@@ -103,11 +212,16 @@ declare module '@strapi/types' {
       'general.bullet-point': GeneralBulletPoint;
       'link.link': LinkLink;
       'page-section-contents.banner': PageSectionContentsBanner;
+      'page-section-contents.button': PageSectionContentsButton;
       'page-section-contents.half-and-half': PageSectionContentsHalfAndHalf;
       'page-section-contents.image-carousel': PageSectionContentsImageCarousel;
-      'page-section-contents.image': PageSectionContentsImage;
+      'page-section-contents.padding': PageSectionContentsPadding;
+      'page-section-contents.quote': PageSectionContentsQuote;
+      'page-section-contents.subtitle': PageSectionContentsSubtitle;
+      'page-section-contents.text': PageSectionContentsText;
       'page-section-contents.title-header': PageSectionContentsTitleHeader;
       'page-section-contents.video': PageSectionContentsVideo;
+      'page-section-contents.wide-image': PageSectionContentsWideImage;
     }
   }
 }

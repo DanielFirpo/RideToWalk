@@ -34,9 +34,13 @@ const grotesk = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ride to Walk",
+  title: {
+    absolute: "Ride to Walk - Therapeutic Horseback Riding in Penryn, CA | Empowering Individuals through Hippotherapy",
+    default: "Ride to Walk - Therapeutic Horseback Riding in Penryn, CA | Empowering Individuals through Hippotherapy",
+    template: "%s | Ride to Walk - Therapeutic Horseback Riding in Penryn, CA",
+  },
   description:
-    "Ride to Walk is a nonprofit organization located in Penryn, CA providing therapeutic horse riding for children and adults with special needs ranging from learning disabilities to quadriplegia.",
+    "Ride to Walk, located in Penryn, CA, offers therapeutic horseback riding programs for individuals with neurological disabilities. Our hippotherapy sessions improve physical, emotional, and cognitive well-being. Founded in 1985, we are a non-profit dedicated to empowering our community through the healing power of horses.",
 };
 
 export default function RootLayout({
@@ -46,9 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
-      <body className="devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none bg-slate-200 blur-3xl filter">
+      <body className="bg-slate-200 blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
         <Navbar></Navbar>
-        <div className="shadow-3xl mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-slate-500">
+        <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-3xl shadow-slate-500">
           {children}
           <Footer></Footer>
         </div>

@@ -26,10 +26,15 @@
       "components": [
         "page-section-contents.half-and-half",
         "page-section-contents.title-header",
-        "page-section-contents.image-carousel",
         "page-section-contents.video",
-        "page-section-contents.image",
-        "page-section-contents.banner"
+        "page-section-contents.banner",
+        "page-section-contents.image-carousel",
+        "page-section-contents.wide-image",
+        "page-section-contents.padding",
+        "page-section-contents.subtitle",
+        "page-section-contents.text",
+        "page-section-contents.button",
+        "page-section-contents.quote"
       ]
     },
     "slug": {

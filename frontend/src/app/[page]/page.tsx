@@ -17,9 +17,8 @@ export default async function Page({ params }: { params: { page: string } }) {
     attributes: Omit<PageType["attributes"], "page"> & { page: Array<{ __component: string }> };
   };
 
-  const pageData: ExtendedPageType & {} = (await fetchAPI("/pages", { populate: "*", filters: { slug: { $eq: params.page } } }))
-    .data[0];
+  const pageData: ExtendedPageType & {} = (await fetchAPI("/pages", { filters: { slug: { $eq: params.page } } })).data[0];
   if (!pageData) return notFound();
-  console.log(pageData.attributes.page[0].__component);
+  console.log("sections", pageData.attributes.page);
   return <main>{pageData.attributes.page.map((pageSection, i) => getPageSection(pageSection, i))}</main>;
 }

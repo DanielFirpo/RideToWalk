@@ -31,9 +31,9 @@ export default async function Navbar() {
   return (
     <>
       <header className="relative text-nowrap">
-        <div className="font-alatsi absolute ml-12 flex h-full w-36 items-center bg-white text-center">
+        <div className="absolute ml-12 flex h-full w-36 items-center bg-white text-center font-alatsi">
           <Image
-            className="p-1"
+            className="p-1 pt-0"
             src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
             alt=""
             width={navData.attributes.logo.data.attributes.width}
@@ -44,7 +44,7 @@ export default async function Navbar() {
           <div className="mx-auto text-center text-xs font-bold uppercase">{navData.attributes.slogan}</div> */}
         </div>
         <div className="absolute ml-48 border-l-[.9rem] border-t-[2.5rem] border-solid border-l-[#707a75] border-t-transparent"></div>
-        <div className="font-grotesk flex h-10 w-full items-center bg-oliveGreen pl-52 text-xs 2xl:text-sm">
+        <div className="flex h-10 w-full items-center bg-oliveGreen pl-52 font-grotesk text-xs 2xl:text-sm">
           <div className="hidden w-full md:flex">
             {navData?.attributes.announcementText && (
               <Marquee className="mx-8 !hidden pl-6 xl:!flex" pauseOnHover={true}>
@@ -136,12 +136,12 @@ export default async function Navbar() {
             </div>
           </div>
         </div>
-        <div className="1.5xl:pr-8 mx-auto flex h-[80px] w-full items-center justify-center bg-rustyBrown pr-5 xl:pr-16">
+        <div className="mx-auto flex h-[80px] w-full items-center justify-center bg-rustyBrown pr-5 xl:pr-16 1.5xl:pr-8">
           <div className="hidden w-full items-center justify-center md:flex xl:justify-between">
             <div className="w-52"></div>
             <NavbarLinks navData={navData}></NavbarLinks>
             {navData?.attributes.donateButton && (
-              <Link className="1.5xl:flex hidden" href={navData?.attributes.donateButton?.linkAddress}>
+              <Link className="hidden 1.5xl:flex" href={navData?.attributes.donateButton?.linkAddress}>
                 <Button size={"large"}>{navData?.attributes.donateButton?.linkText}</Button>
               </Link>
             )}
@@ -163,7 +163,7 @@ export default async function Navbar() {
                         {navData?.attributes[linkCategory].map((navLink) => (
                           <AccordionContent key={navLink.linkText}>
                             <Link
-                              className="font-grotesk block w-full select-none text-nowrap pl-3 text-base text-white underline transition-colors"
+                              className="block w-full select-none text-nowrap pl-3 font-grotesk text-base text-white underline transition-colors"
                               href={navLink.linkAddress}
                             >
                               {navLink.linkText}
@@ -175,7 +175,7 @@ export default async function Navbar() {
                       navData?.attributes[linkCategory] && (
                         <Link
                           key={linkCategory}
-                          className="font-grotesk mt-10 block w-full select-none text-nowrap text-base font-semibold text-white underline transition-colors"
+                          className="mt-10 block w-full select-none text-nowrap font-grotesk text-base font-semibold text-white underline transition-colors"
                           href={navData?.attributes[linkCategory][0].linkAddress}
                         >
                           {navData?.attributes[linkCategory][0].linkText}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_section_contents_quotes",
+  "info": {
+    "displayName": "quote",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true,
+      "default": "Put a quote here. Make sure to not include the quotation marks, since they are added automatically."
+    },
+    "attribution": {
+      "type": "string",
+      "default": "Somebody who said something, of some organization."
+    }
+  }
+}

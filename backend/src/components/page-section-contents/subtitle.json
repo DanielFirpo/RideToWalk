@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_section_contents_subtitles",
+  "info": {
+    "displayName": "subtitle",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true,
+      "default": "This is a subtitle for a section of the page. "
+    }
+  }
+}

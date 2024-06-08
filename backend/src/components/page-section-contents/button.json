@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_section_contents_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.link",
+      "required": true
+    }
+  }
+}

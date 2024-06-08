@@ -5,3 +5,7 @@
 body * {
   font-synthesis: none;
 }
+
+body {
+  color: #1d1d1d;
+}
