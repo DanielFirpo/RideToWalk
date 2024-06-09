@@ -74,7 +74,7 @@ export function buildStrapiRequest(path: string, urlParamsObject = {}, options =
 
   // Merge default and user options
   const mergedOptions = {
-    ...(process.env.NEXT_PUBLIC_IS_STAGING && { next: { revalidate: 10 } }),
+    ...(process.env.NEXT_PUBLIC_IS_STAGING && { next: { revalidate: 5 } }),
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.STRAPI_TOKEN ? process.env.STRAPI_TOKEN : process.env.NEXT_PUBLIC_API_TOKEN}`,
