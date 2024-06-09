@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const metaData: MetaDataType = (await fetchAPI("/meta-data", { populate: "*" })).data;
 
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL ?? ""),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_API_URL ?? ""),
     title: {
       absolute: metaData.attributes.homepageTitle,
       default: metaData.attributes.homepageTitle,

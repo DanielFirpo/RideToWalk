@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export async function generateStaticParams() {
   const pages: PageType[] = (await fetchAPI("/pages", { populate: "*" })).data;
 
+  console.log("pages", pages);
+
   return pages.map((page: PageType) => ({
     page: page.attributes.slug,
   }));
