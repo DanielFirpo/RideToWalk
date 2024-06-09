@@ -3,14 +3,17 @@
 export interface Text {
   text: string;
   title?: string;
+  centerAlign: boolean;
 }
 export interface Text_Plain {
   text: string;
   title?: string;
+  centerAlign: boolean;
 }
 
 export interface Text_NoRelations {
   text: string;
   title?: string;
+  centerAlign: boolean;
 }
 

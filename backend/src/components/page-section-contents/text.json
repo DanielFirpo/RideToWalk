@@ -15,6 +15,11 @@
     "title": {
       "type": "string",
       "default": "You can put an opening title for the paragraph here"
+    },
+    "centerAlign": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

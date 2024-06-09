@@ -3,7 +3,9 @@ import { Text as TextType } from "@pageSectionTypes/Text";
 export default async function Text(props: { sectionData: TextType }) {
   return (
     <section className="mx-14 my-5">
-      <div className="font-grotesk font-medium leading-relaxed lg:max-w-[70%]">
+      <div
+        className={`font-grotesk font-medium leading-relaxed lg:max-w-[80%] ${props.sectionData.centerAlign ? "mx-auto text-center" : "mx-0 text-left"}`}
+      >
         {props.sectionData.title && (
           <h2 className="mb-7 pr-2 font-baskerville text-2xl leading-snug sm:pr-7 sm:text-2xl">{props.sectionData.title}</h2>
         )}

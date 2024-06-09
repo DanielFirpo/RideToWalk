@@ -158,6 +158,9 @@ export interface PageSectionContentsText extends Schema.Component {
       Attribute.DefaultTo<'Paragraph(s) go here'>;
     title: Attribute.String &
       Attribute.DefaultTo<'You can put an opening title for the paragraph here'>;
+    centerAlign: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
