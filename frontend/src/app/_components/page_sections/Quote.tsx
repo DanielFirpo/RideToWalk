@@ -4,7 +4,7 @@ export default async function Quote(props: { sectionData: QuoteType }) {
   const isLongQuote = props.sectionData.quote.length > 100;
 
   return (
-    <section className="my-10">
+    <section>
       <blockquote className="mx-14 w-fit text-center lg:mx-24">
         <span className="icon-[ri--double-quotes-l] h-10 w-10 text-metalicCopper text-opacity-50"></span>
         {/* <div className="relative">
