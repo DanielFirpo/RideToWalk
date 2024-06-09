@@ -66,9 +66,15 @@ export async function fetchAPIClient(requestUrl: string, mergedOptions = {}) {
  * Client only.
  */
 export function buildStrapiRequest(path: string, urlParamsObject = {}, options = {}) {
+  if (process.env.NEXT_PUBLIC_IS_STAGING) {
+    console.warn(
+      "Warning! NEXT_PUBLIC_IS_STAGING=true, which means the site will not be static and will be updated on every request!",
+    );
+  }
+
   // Merge default and user options
   const mergedOptions = {
-    next: { revalidate: 1 },
+    ...(process.env.NEXT_PUBLIC_IS_STAGING && { next: { revalidate: 10 } }),
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.STRAPI_TOKEN ? process.env.STRAPI_TOKEN : process.env.NEXT_PUBLIC_API_TOKEN}`,
