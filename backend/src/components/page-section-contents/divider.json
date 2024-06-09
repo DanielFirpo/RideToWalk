@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_page_section_contents_dividers",
+  "info": {
+    "displayName": "Divider",
+    "icon": "oneToOne"
+  },
+  "options": {},
+  "attributes": {
+    "centerText": {
+      "type": "string"
+    }
+  }
+}

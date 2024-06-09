@@ -10,6 +10,7 @@ import Subtitle from "../_components/page_sections/Subtitle";
 import Button from "../_components/page_sections/Button";
 import Text from "../_components/page_sections/Text";
 import Quote from "../_components/page_sections/Quote";
+import Divider from "../_components/page_sections/Divider";
 
 export function getBackgroundImage(srcSet = "") {
   const imageSet = srcSet
@@ -65,6 +66,9 @@ export const getPageSection = ({ __component, ...rest }: { __component: string }
       break;
     case "page-section-contents.quote":
       PageSection = Quote;
+      break;
+    case "page-section-contents.divider":
+      PageSection = Divider;
       break;
   }
 

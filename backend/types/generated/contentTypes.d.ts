@@ -1476,7 +1476,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'page-section-contents.text',
         'page-section-contents.title-header',
         'page-section-contents.video',
-        'page-section-contents.wide-image'
+        'page-section-contents.wide-image',
+        'page-section-contents.divider'
       ]
     > &
       Attribute.Required &

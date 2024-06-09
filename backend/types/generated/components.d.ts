@@ -62,6 +62,17 @@ export interface PageSectionContentsButton extends Schema.Component {
   };
 }
 
+export interface PageSectionContentsDivider extends Schema.Component {
+  collectionName: 'components_page_section_contents_dividers';
+  info: {
+    displayName: 'Divider';
+    icon: 'oneToOne';
+  };
+  attributes: {
+    centerText: Attribute.String;
+  };
+}
+
 export interface PageSectionContentsHalfAndHalf extends Schema.Component {
   collectionName: 'components_page_section_contents_half_and_halves';
   info: {
@@ -216,6 +227,7 @@ declare module '@strapi/types' {
       'link.link': LinkLink;
       'page-section-contents.banner': PageSectionContentsBanner;
       'page-section-contents.button': PageSectionContentsButton;
+      'page-section-contents.divider': PageSectionContentsDivider;
       'page-section-contents.half-and-half': PageSectionContentsHalfAndHalf;
       'page-section-contents.image-carousel': PageSectionContentsImageCarousel;
       'page-section-contents.padding': PageSectionContentsPadding;

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-09T21:38:13.539Z"
+    "x-generation-date": "2024-06-09T23:45:47.508Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6235,6 +6235,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsDividerComponent"
                 }
               ]
             }
@@ -6304,6 +6307,9 @@
                     },
                     {
                       "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/PageSectionContentsDividerComponent"
                     }
                   ]
                 }
@@ -6483,6 +6489,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/PageSectionContentsWideImageComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/PageSectionContentsDividerComponent"
                 }
               ]
             }
@@ -7810,6 +7819,20 @@
           },
           "addPaddingOnLeftAndRight": {
             "type": "boolean"
+          }
+        }
+      },
+      "PageSectionContentsDividerComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "centerText": {
+            "type": "string"
           }
         }
       },
