@@ -26,6 +26,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
           alt={props.sectionData.image.data.attributes.alternativeText}
           width={props.sectionData.image.data.attributes.width}
           height={props.sectionData.image.data.attributes.height}
+          className="max-h-[500px] w-auto"
         />
         <div className="pt-2 font-baskerville text-base font-bold">{props.sectionData.imageDescription}</div>
       </div>
