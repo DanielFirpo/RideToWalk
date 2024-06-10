@@ -38,15 +38,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
             {props.sectionData.title}
           </h2>
         )}
-        {props.sectionData.text.split("\\n").map((line) => {
-          const regex = /\\h(.*?)\\h/g;
-          const parts = line.split(regex);
-          return (
-            <p className="pt-7" key={line}>
-              {insertLinksAndHighlights(line, props.sectionData.linksToInsert)}
-            </p>
-          );
-        })}
+        {renderParagraphs(props.sectionData.text, props.sectionData.linksToInsert)}
         {props.sectionData.button && (
           <Link href={props.sectionData.button.linkAddress}>
             <Button className="mt-10" variant="secondary">
@@ -59,29 +51,41 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
   );
 }
 
-const insertLinksAndHighlights = (text: string, links: LinkType[]) => {
-  const linkSplit = text.split("\\a");
+const renderParagraphs = (text: string, links: LinkType[]) => {
+  const lines = text.split("\\n");
   let linkIndex = 0;
 
-  return linkSplit.map((part, index) => {
-    if (index < linkSplit.length - 1) {
-      const link = links[linkIndex++];
-      return (
-        <React.Fragment key={index}>
-          {insertHighlights(part)}
-          <Link href={link.linkAddress} className="text-blue-500 underline">
-            {link.linkText}
-          </Link>
-        </React.Fragment>
-      );
-    }
-    return insertHighlights(part);
+  return lines.map((line, lineIndex) => {
+    const linkSplit = line.split("\\a");
+
+    return (
+      <p className="pt-7" key={lineIndex}>
+        {linkSplit.map((part, partIndex) => {
+          const highlightedPart = insertHighlights(part);
+
+          if (partIndex < linkSplit.length - 1 && linkIndex < links.length) {
+            const link = links[linkIndex++];
+            return (
+              <React.Fragment key={partIndex}>
+                {highlightedPart}
+                <Link href={link.linkAddress} className="text-blue-500 underline">
+                  {link.linkText}
+                </Link>
+              </React.Fragment>
+            );
+          }
+
+          return highlightedPart;
+        })}
+      </p>
+    );
   });
 };
 
 const insertHighlights = (text: string) => {
   const regex = /\\h(.*?)\\h/g;
   const parts = text.split(regex);
+
   return parts.map((part, index) =>
     index % 2 === 1 ? (
       <mark className="bg-transparent font-bold text-metalicCopper" key={index}>
