@@ -36,6 +36,10 @@ export default async function Home() {
               muted
               loop
               style={{
+                aspectRatio: "2 / 1",
+                background: heroFallbackImage,
+                backgroundSize: "cover",
+                backgroundPosition: "50% 0",
                 filter: `brightness(${darkenPecentage}%)`,
               }}
             >
@@ -45,16 +49,6 @@ export default async function Home() {
               />
               {/* fallback image: */}
             </video>
-            <div
-              className="h-auto w-full sm:hidden"
-              style={{
-                aspectRatio: "2 / 1",
-                background: heroFallbackImage,
-                backgroundSize: "cover",
-                backgroundPosition: "50% 0",
-                filter: `brightness(${darkenPecentage}%)`,
-              }}
-            ></div>
             <div className="absolute left-1/2 top-1/2 h-full w-[90%] sm:w-[68%]">
               <div className="absolute -left-1/2 -top-1/2 z-10 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
                 {pageData.attributes.heroImageText.split("\\n").map((line) => {
