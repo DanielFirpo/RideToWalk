@@ -59,7 +59,7 @@ export default async function Footer() {
           {footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
             <div className="basis-1/3" key={img.attributes.url}>
               <Image
-                className="mb-5 aspect-square h-28 w-28 min-w-28"
+                className="mb-5 h-28 w-auto"
                 src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
                 alt=""
                 width={img.attributes.width}

@@ -29,6 +29,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
           width={props.sectionData.image.data.attributes.width}
           height={props.sectionData.image.data.attributes.height}
           className="max-h-[500px] w-auto"
+          priority
         />
         <div className="pt-2 font-baskerville text-base font-bold">{props.sectionData.imageDescription}</div>
       </div>
@@ -66,7 +67,7 @@ const renderParagraphs = (text: string, links: LinkType[]) => {
             return (
               <React.Fragment key={partIndex}>
                 {highlightedPart}
-                <Link href={link.linkAddress} className="text-blue-500 underline" target="_blank">
+                <Link href={link.linkAddress} className="text-metalicCopper underline" target="_blank">
                   {link.linkText}
                 </Link>
               </React.Fragment>
