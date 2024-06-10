@@ -17,6 +17,7 @@ export interface HalfAndHalf {
   imagePosition: ImagePosition;
   imageDescription?: string;
   title?: string;
+  linksToInsert: Link[];
 }
 export interface HalfAndHalf_Plain {
   image: Media_Plain;
@@ -25,6 +26,7 @@ export interface HalfAndHalf_Plain {
   imagePosition: ImagePosition;
   imageDescription?: string;
   title?: string;
+  linksToInsert: Link_Plain[];
 }
 
 export interface HalfAndHalf_NoRelations {
@@ -34,5 +36,6 @@ export interface HalfAndHalf_NoRelations {
   imagePosition: ImagePosition;
   imageDescription?: string;
   title?: string;
+  linksToInsert: Link_NoRelations[];
 }
 

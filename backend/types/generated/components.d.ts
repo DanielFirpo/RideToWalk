@@ -93,6 +93,7 @@ export interface PageSectionContentsHalfAndHalf extends Schema.Component {
       Attribute.DefaultTo<'A Picture of the Ranch'>;
     title: Attribute.String &
       Attribute.DefaultTo<'A Title Can Go Here If You Want.'>;
+    linksToInsert: Attribute.Component<'link.link', true>;
   };
 }
 

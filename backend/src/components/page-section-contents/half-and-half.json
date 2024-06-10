@@ -41,6 +41,11 @@
     "title": {
       "type": "string",
       "default": "A Title Can Go Here If You Want."
+    },
+    "linksToInsert": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
     }
   }
 }
