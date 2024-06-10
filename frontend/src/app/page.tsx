@@ -54,7 +54,7 @@ export default async function Home() {
             <Image
               className=" max-h-16 max-w-16 rounded-sm border-8 border-white"
               src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroImageCallToActionImage.data.attributes.url}
-              alt=""
+              alt={pageData.attributes.heroImageCallToActionImage.data.attributes.alternativeText}
               width={pageData.attributes.heroImageCallToActionImage.data.attributes.width}
               height={pageData.attributes.heroImageCallToActionImage.data.attributes.height}
               priority
@@ -111,7 +111,7 @@ export default async function Home() {
           <Image
             className="mr-5 mt-auto hidden aspect-square w-2/5 lg:block"
             src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.detailedAboutSectionImage.data.attributes.url}
-            alt=""
+            alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
           />
@@ -155,7 +155,7 @@ export default async function Home() {
               <Image
                 className="m-auto px-3 pt-1"
                 src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
-                alt=""
+                alt={navData.attributes.logo.data.attributes.alternativeText}
                 width={navData.attributes.logo.data.attributes.width}
                 height={navData.attributes.logo.data.attributes.height}
                 priority

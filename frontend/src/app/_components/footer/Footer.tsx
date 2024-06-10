@@ -39,7 +39,7 @@ export default async function Footer() {
           <Image
             className="h-48 w-auto pt-1"
             src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.logo.data.attributes.url}
-            alt=""
+            alt={footerData.attributes.logo.data.attributes.alternativeText}
             width={footerData.attributes.logo.data.attributes.width}
             height={footerData.attributes.logo.data.attributes.height}
           />
@@ -61,7 +61,7 @@ export default async function Footer() {
               <Image
                 className="mb-5 h-28 w-auto"
                 src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
-                alt=""
+                alt={img.attributes.alternativeText}
                 width={img.attributes.width}
                 height={img.attributes.height}
               />

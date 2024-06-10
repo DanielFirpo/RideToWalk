@@ -35,7 +35,7 @@ export default async function Navbar() {
           <Image
             className="p-1 pt-0"
             src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
-            alt=""
+            alt={navData.attributes.logo.data.attributes.alternativeText}
             width={navData.attributes.logo.data.attributes.width}
             height={navData.attributes.logo.data.attributes.height}
             priority
