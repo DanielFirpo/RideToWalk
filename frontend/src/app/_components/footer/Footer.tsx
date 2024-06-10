@@ -55,9 +55,9 @@ export default async function Footer() {
             </p>
           );
         })}
-        <div className="mt-8 flex flex-wrap sm:w-9/12">
+        <div className="mt-8 flex flex-wrap gap-3 sm:w-9/12 sm:gap-0">
           {footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
-            <div className="basis-1/3" key={img.attributes.url}>
+            <div className="sm:basis-1/3" key={img.attributes.url}>
               <Image
                 className="mb-5 h-28 w-auto"
                 src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
