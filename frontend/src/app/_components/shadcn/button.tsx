@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/src/app/_components/shadcn/utils/shadUtils";
 
 const buttonVariants = cva(
-  "inline-flex shadow-lg shadow-black-300 items-center justify-center whitespace-nowrap text-sm uppercase ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950",
+  "inline-flex text-wrap shadow-lg shadow-black-300 items-center justify-center text-sm uppercase ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950",
   {
     variants: {
       variant: {

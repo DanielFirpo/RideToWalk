@@ -6,7 +6,7 @@ export default async function Button(props: { sectionData: ButtonType }) {
   return (
     <section>
       <Link href={props.sectionData.link.linkAddress}>
-        <ButtonComponent className="ml-14 mr-14 text-wrap" variant="secondary">
+        <ButtonComponent className="ml-14 mr-14" variant="secondary">
           {props.sectionData.link.linkText}
         </ButtonComponent>
       </Link>

@@ -18,7 +18,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
       style={{ flexDirection: props.sectionData.imagePosition == "Image on Left" ? "row" : "row-reverse" }}
     >
       <div
-        className="hidden h-full w-full flex-col items-center justify-center lg:flex"
+        className="hidden h-full w-[40%] flex-col items-center justify-center lg:flex"
         style={{
           minWidth: imageContainerWidth + "px",
         }}
@@ -32,7 +32,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
         />
         <div className="pt-2 font-baskerville text-base font-bold">{props.sectionData.imageDescription}</div>
       </div>
-      <div className="min-w-[60%] font-grotesk font-medium leading-relaxed">
+      <div className="w-full font-grotesk font-medium leading-relaxed lg:w-[60%]">
         {props.sectionData.title && (
           <h2 className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-2xl">
             {props.sectionData.title}
