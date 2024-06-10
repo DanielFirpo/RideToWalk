@@ -34,7 +34,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
       </div>
       <div className="w-full font-grotesk font-medium leading-relaxed lg:w-[60%]">
         {props.sectionData.title && (
-          <h2 className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-2xl">
+          <h2 className="mb-7 inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-2xl">
             {props.sectionData.title}
           </h2>
         )}
