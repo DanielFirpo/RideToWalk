@@ -59,7 +59,7 @@ const renderParagraphs = (text: string, links: LinkType[]) => {
     const linkSplit = line.split("\\a");
 
     return (
-      <p className="pt-7" key={lineIndex}>
+      <p className="min-h-7" key={lineIndex}>
         {linkSplit.map((part, partIndex) => {
           const highlightedPart = insertHighlights(part);
 

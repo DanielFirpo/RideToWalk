@@ -13,7 +13,7 @@ export default async function Text(props: { sectionData: TextType }) {
           const regex = /\\h(.*?)\\h/g;
           const parts = line.split(regex);
           return (
-            <p className="pb-5" key={line}>
+            <p className="min-h-7" key={line}>
               {parts.map((part, index) =>
                 index % 2 === 1 ? (
                   <mark className="bg-transparent font-bold text-metalicCopper" key={index}>
