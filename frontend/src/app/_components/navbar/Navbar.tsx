@@ -141,7 +141,7 @@ export default async function Navbar() {
             <div className="w-52"></div>
             <NavbarLinks navData={navData}></NavbarLinks>
             {navData?.attributes.donateButton && (
-              <Link className="hidden 1.5xl:flex" href={navData?.attributes.donateButton?.linkAddress}>
+              <Link className="hidden 1.5xl:flex" href={navData?.attributes.donateButton?.linkAddress} target="_blank">
                 <Button size={"large"}>{navData?.attributes.donateButton?.linkText}</Button>
               </Link>
             )}

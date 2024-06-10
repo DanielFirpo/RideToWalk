@@ -40,7 +40,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
         )}
         {renderParagraphs(props.sectionData.text, props.sectionData.linksToInsert)}
         {props.sectionData.button && (
-          <Link href={props.sectionData.button.linkAddress}>
+          <Link href={props.sectionData.button.linkAddress} target="_blank">
             <Button className="mt-10" variant="secondary">
               {props.sectionData.button.linkText}
             </Button>

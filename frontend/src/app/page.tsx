@@ -85,7 +85,7 @@ export default async function Home() {
               {pageData.attributes.missionStatementText}
             </p>
             {pageData.attributes.missionStatementButton && (
-              <Link href={pageData.attributes.missionStatementButton.linkAddress}>
+              <Link href={pageData.attributes.missionStatementButton.linkAddress} target="_blank">
                 <Button className="mt-8" variant={"secondary"}>
                   {pageData.attributes.missionStatementButton.linkText}
                 </Button>
@@ -143,7 +143,7 @@ export default async function Home() {
                 );
               })}
             </ul>
-            <Link href={pageData.attributes.detailedAboutSectionButton.linkAddress}>
+            <Link href={pageData.attributes.detailedAboutSectionButton.linkAddress} target="_blank">
               <Button variant="secondary">{pageData.attributes.detailedAboutSectionButton.linkText}</Button>
             </Link>
           </div>
@@ -173,7 +173,7 @@ export default async function Home() {
               backgroundPosition: "50% 0",
             }}
           >
-            <Link href={pageData.attributes.collageButton1.linkAddress}>
+            <Link href={pageData.attributes.collageButton1.linkAddress} target="_blank">
               <Button variant={"light"}>{pageData.attributes.collageButton1.linkText}</Button>
             </Link>
           </div>
@@ -186,7 +186,7 @@ export default async function Home() {
               backgroundPosition: "50% 0",
             }}
           >
-            <Link href={pageData.attributes.collageButton2.linkAddress}>
+            <Link href={pageData.attributes.collageButton2.linkAddress} target="_blank">
               <Button variant={"light"}>{pageData.attributes.collageButton2.linkText}</Button>
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default async function Home() {
               backgroundPosition: "50% 0",
             }}
           >
-            <Link href={pageData.attributes.collageButton3.linkAddress}>
+            <Link href={pageData.attributes.collageButton3.linkAddress} target="_blank">
               <Button variant={"light"}>{pageData.attributes.collageButton3.linkText}</Button>
             </Link>
           </div>
@@ -212,7 +212,7 @@ export default async function Home() {
               backgroundPosition: "50% 0",
             }}
           >
-            <Link href={pageData.attributes.collageButton4.linkAddress}>
+            <Link href={pageData.attributes.collageButton4.linkAddress} target="_blank">
               <Button variant={"light"}>{pageData.attributes.collageButton4.linkText}</Button>
             </Link>
           </div>
