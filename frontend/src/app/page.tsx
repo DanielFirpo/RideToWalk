@@ -74,7 +74,12 @@ export default async function Home() {
               priority
             />
             <span className="mx-auto pl-5 font-semibold text-white sm:ml-5 sm:mr-0 sm:pl-0">
-              {pageData.attributes.heroImageCallToActionText}
+              {pageData.attributes.heroImageCallToActionText}&nbsp;
+              {pageData.attributes.heroImageCallToActionLink && (
+                <Link href={pageData.attributes.heroImageCallToActionLink?.linkAddress} className="underline">
+                  {pageData.attributes.heroImageCallToActionLink?.linkText}
+                </Link>
+              )}
             </span>
           </div>
         </section>

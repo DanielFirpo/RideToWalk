@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-10T17:21:06.172Z"
+    "x-generation-date": "2024-06-10T22:22:56.006Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1571,6 +1571,7 @@
           "collageButton4",
           "carouselImages",
           "heroVideo",
+          "heroImageCallToActionText",
           "locale"
         ],
         "type": "object",
@@ -1599,9 +1600,6 @@
               }
             ],
             "example": "string or id"
-          },
-          "heroImageCallToActionText": {
-            "type": "string"
           },
           "heroImageDarkenPercent": {
             "type": "integer"
@@ -1747,6 +1745,12 @@
             ],
             "example": "string or id"
           },
+          "heroImageCallToActionLink": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
+          },
+          "heroImageCallToActionText": {
+            "type": "string"
+          },
           "locale": {
             "type": "string"
           }
@@ -1782,7 +1786,8 @@
               "collageImage4",
               "collageButton4",
               "carouselImages",
-              "heroVideo"
+              "heroVideo",
+              "heroImageCallToActionText"
             ],
             "type": "object",
             "properties": {
@@ -1810,9 +1815,6 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "heroImageCallToActionText": {
-                "type": "string"
               },
               "heroImageDarkenPercent": {
                 "type": "integer"
@@ -1957,6 +1959,12 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "heroImageCallToActionLink": {
+                "$ref": "#/components/schemas/LinkLinkComponent"
+              },
+              "heroImageCallToActionText": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -2104,7 +2112,8 @@
           "collageImage4",
           "collageButton4",
           "carouselImages",
-          "heroVideo"
+          "heroVideo",
+          "heroImageCallToActionText"
         ],
         "properties": {
           "heroImageText": {
@@ -2870,9 +2879,6 @@
                 }
               }
             }
-          },
-          "heroImageCallToActionText": {
-            "type": "string"
           },
           "heroImageDarkenPercent": {
             "type": "integer"
@@ -4169,6 +4175,12 @@
                 }
               }
             }
+          },
+          "heroImageCallToActionLink": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
+          },
+          "heroImageCallToActionText": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

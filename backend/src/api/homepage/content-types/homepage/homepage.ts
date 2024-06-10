@@ -16,7 +16,6 @@ export interface Homepage {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    heroImageText: string;
     heroFallbackImage: { data: Media };
     heroImageCallToActionImage: { data: Media };
-    heroImageCallToActionText?: string;
     heroImageDarkenPercent?: number;
     missionStatementBackgroundImage: { data: Media };
     missionStatementTitle: string;
@@ -39,6 +38,8 @@ export interface Homepage {
     collageButton4: Link;
     carouselImages: { data: Media[] };
     heroVideo: { data: Media };
+    heroImageCallToActionLink?: Link;
+    heroImageCallToActionText: string;
     locale: string;
     localizations?: { data: Homepage[] };
   };
@@ -48,7 +49,6 @@ export interface Homepage_Plain {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
   heroFallbackImage: Media_Plain;
   heroImageCallToActionImage: Media_Plain;
-  heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
   missionStatementBackgroundImage: Media_Plain;
   missionStatementTitle: string;
@@ -71,6 +71,8 @@ export interface Homepage_Plain {
   collageButton4: Link_Plain;
   carouselImages: Media_Plain[];
   heroVideo: Media_Plain;
+  heroImageCallToActionLink?: Link_Plain;
+  heroImageCallToActionText: string;
   locale: string;
   localizations?: Homepage_Plain[];
 }
@@ -80,7 +82,6 @@ export interface Homepage_NoRelations {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
   heroFallbackImage: number;
   heroImageCallToActionImage: number;
-  heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
   missionStatementBackgroundImage: number;
   missionStatementTitle: string;
@@ -103,6 +104,8 @@ export interface Homepage_NoRelations {
   collageButton4: Link_NoRelations;
   carouselImages: number[];
   heroVideo: number;
+  heroImageCallToActionLink?: Link_NoRelations;
+  heroImageCallToActionText: string;
   locale: string;
   localizations?: Homepage[];
 }
@@ -112,7 +115,6 @@ export interface Homepage_AdminPanelLifeCycle {
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
   heroFallbackImage: AdminPanelRelationPropertyModification<Media_Plain>;
   heroImageCallToActionImage: AdminPanelRelationPropertyModification<Media_Plain>;
-  heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
   missionStatementBackgroundImage: AdminPanelRelationPropertyModification<Media_Plain>;
   missionStatementTitle: string;
@@ -135,6 +137,8 @@ export interface Homepage_AdminPanelLifeCycle {
   collageButton4: Link_Plain;
   carouselImages: AdminPanelRelationPropertyModification<Media_Plain>[];
   heroVideo: AdminPanelRelationPropertyModification<Media_Plain>;
+  heroImageCallToActionLink?: Link_Plain;
+  heroImageCallToActionText: string;
   locale: string;
   localizations?: Homepage[];
 }
