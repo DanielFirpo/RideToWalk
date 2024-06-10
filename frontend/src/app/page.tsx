@@ -6,13 +6,13 @@ import { Button } from "./_components/shadcn/button";
 import Link from "next/link";
 import { Navbar } from "@contentTypes/navbar/content-types/navbar/navbar";
 import { HomepageCarousel } from "./_components/homepage/HomepageCarousel";
-import Head from "next/head";
+
 export default async function Home() {
   const pageData: Homepage = (await fetchAPI("/homepage", { populate: "*" })).data;
   const navData: Navbar = (await fetchAPI("/navbar", { populate: "*" })).data;
 
   const {
-    heroBackgroundImage,
+    heroFallbackImage,
     missionStatementBackgroundImage,
     collageImage1BackgroundImage,
     collageImage2BackgroundImage,
@@ -20,37 +20,57 @@ export default async function Home() {
     collageImage4BackgroundImage,
   } = getBackgroundImages(pageData);
 
-  const darkenPecentage = (pageData.attributes.heroImageDarkenPercent ?? 0) / 100;
-
-  console.log("rendering homepage");
+  const darkenPecentage = 100 - (pageData.attributes.heroImageDarkenPercent ?? 0);
 
   return (
     <>
       <main>
         <section className="w-full bg-black">
-          <div
-            className="flex h-auto w-full flex-col items-center justify-center"
-            style={{
-              aspectRatio: "2 / 1",
-              background: `linear-gradient( rgba(0, 0, 0, ${darkenPecentage}), rgba(0, 0, 0, ${darkenPecentage}) ), ${heroBackgroundImage}`,
-              backgroundSize: "cover",
-              backgroundPosition: "50% 0",
-            }}
-          >
-            <div className="mb-8 flex w-[68%] flex-col items-center justify-center sm:mb-28">
-              {pageData.attributes.heroImageText.split("\\n").map((line) => {
-                return (
-                  <h1
-                    key={line}
-                    className="mt-6 text-center font-baskerville text-xl leading-normal text-white opacity-100 md:text-3xl lg:text-4xl lg:leading-relaxed"
-                  >
-                    {line}
-                  </h1>
-                );
-              })}
+          <div className="relative">
+            <video
+              className="hidden w-full sm:block"
+              width={pageData.attributes.heroVideo.data.attributes.width}
+              height={pageData.attributes.heroVideo.data.attributes.height}
+              preload="none"
+              autoPlay
+              muted
+              loop
+              style={{
+                filter: `brightness(${darkenPecentage}%)`,
+              }}
+            >
+              <source
+                src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroVideo.data.attributes.url}
+                type="video/webm"
+              />
+              {/* fallback image: */}
+            </video>
+            <div
+              className="h-auto w-full sm:hidden"
+              style={{
+                aspectRatio: "2 / 1",
+                background: heroFallbackImage,
+                backgroundSize: "cover",
+                backgroundPosition: "50% 0",
+                filter: `brightness(${darkenPecentage}%)`,
+              }}
+            ></div>
+            <div className="absolute left-1/2 top-1/2 h-full w-[90%] sm:w-[68%]">
+              <div className="absolute -left-1/2 -top-1/2 z-10 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
+                {pageData.attributes.heroImageText.split("\\n").map((line) => {
+                  return (
+                    <h1
+                      key={line}
+                      className="text-center font-baskerville text-base leading-normal text-white opacity-100 sm:text-2xl md:text-3xl lg:text-4xl lg:leading-relaxed"
+                    >
+                      {line}
+                    </h1>
+                  );
+                })}
+              </div>
             </div>
           </div>
-          <div className="mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
+          <div className="relative z-20 mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
             <Image
               className=" max-h-16 max-w-16 rounded-sm border-8 border-white"
               src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroImageCallToActionImage.data.attributes.url}
@@ -290,13 +310,13 @@ function getBackgroundImages(pageData: Homepage) {
   //NextJS's way to use css background images while still getting the optimization of next/Image:
   const heroProps = getImageProps({
     alt: "",
-    width: pageData.attributes.heroImage.data.attributes.width,
-    height: pageData.attributes.heroImage.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroImage.data.attributes.url,
+    width: pageData.attributes.heroFallbackImage.data.attributes.width,
+    height: pageData.attributes.heroFallbackImage.data.attributes.height,
+    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroFallbackImage.data.attributes.url,
     priority: true,
   });
 
-  const heroBackgroundImage = getBackgroundImage(heroProps.props.srcSet);
+  const heroFallbackImage = getBackgroundImage(heroProps.props.srcSet);
 
   const missionStatementProps = getImageProps({
     alt: "",
@@ -348,7 +368,7 @@ function getBackgroundImages(pageData: Homepage) {
   const collageImage4BackgroundImage = getBackgroundImage(collageImage4Props.props.srcSet);
 
   return {
-    heroBackgroundImage,
+    heroFallbackImage,
     missionStatementBackgroundImage,
     collageImage1BackgroundImage,
     collageImage2BackgroundImage,

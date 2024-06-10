@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-10T01:07:29.393Z"
+    "x-generation-date": "2024-06-10T17:21:06.172Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1549,7 +1549,7 @@
       "HomepageLocalizationRequest": {
         "required": [
           "heroImageText",
-          "heroImage",
+          "heroFallbackImage",
           "heroImageCallToActionImage",
           "missionStatementBackgroundImage",
           "missionStatementTitle",
@@ -1570,6 +1570,7 @@
           "collageImage4",
           "collageButton4",
           "carouselImages",
+          "heroVideo",
           "locale"
         ],
         "type": "object",
@@ -1577,7 +1578,7 @@
           "heroImageText": {
             "type": "string"
           },
-          "heroImage": {
+          "heroFallbackImage": {
             "oneOf": [
               {
                 "type": "integer"
@@ -1735,6 +1736,17 @@
               "example": "string or id"
             }
           },
+          "heroVideo": {
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "example": "string or id"
+          },
           "locale": {
             "type": "string"
           }
@@ -1749,7 +1761,7 @@
           "data": {
             "required": [
               "heroImageText",
-              "heroImage",
+              "heroFallbackImage",
               "heroImageCallToActionImage",
               "missionStatementBackgroundImage",
               "missionStatementTitle",
@@ -1769,14 +1781,15 @@
               "collageButton3",
               "collageImage4",
               "collageButton4",
-              "carouselImages"
+              "carouselImages",
+              "heroVideo"
             ],
             "type": "object",
             "properties": {
               "heroImageText": {
                 "type": "string"
               },
-              "heroImage": {
+              "heroFallbackImage": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -1934,6 +1947,17 @@
                   "example": "string or id"
                 }
               },
+              "heroVideo": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
+              },
               "locale": {
                 "type": "string"
               }
@@ -2059,7 +2083,7 @@
         "type": "object",
         "required": [
           "heroImageText",
-          "heroImage",
+          "heroFallbackImage",
           "heroImageCallToActionImage",
           "missionStatementBackgroundImage",
           "missionStatementTitle",
@@ -2079,13 +2103,14 @@
           "collageButton3",
           "collageImage4",
           "collageButton4",
-          "carouselImages"
+          "carouselImages",
+          "heroVideo"
         ],
         "properties": {
           "heroImageText": {
             "type": "string"
           },
-          "heroImage": {
+          "heroFallbackImage": {
             "type": "object",
             "properties": {
               "data": {
@@ -3995,6 +4020,145 @@
                                   "type": "object",
                                   "properties": {}
                                 }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "heroVideo": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "alternativeText": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "formats": {},
+                      "hash": {
+                        "type": "string"
+                      },
+                      "ext": {
+                        "type": "string"
+                      },
+                      "mime": {
+                        "type": "string"
+                      },
+                      "size": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "previewUrl": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "provider_metadata": {},
+                      "related": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folder": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folderPath": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
                               }
                             }
                           }

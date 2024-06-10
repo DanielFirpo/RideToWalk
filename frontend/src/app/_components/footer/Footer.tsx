@@ -33,7 +33,15 @@ export default async function Footer() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="m-10 mr-5 mt-0 hidden w-1/2 bg-eggshell lg:block"></div>
+      <div className="m-10 mr-5 mt-0 hidden w-1/2 items-center justify-center lg:flex">
+        <Image
+          className="mb-5 max-h-[700px] w-auto"
+          src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.leftImage.data.attributes.url}
+          alt={footerData.attributes.leftImage.data.attributes.alternativeText}
+          width={footerData.attributes.leftImage.data.attributes.width}
+          height={footerData.attributes.leftImage.data.attributes.height}
+        />
+      </div>
       <div className="ml-12 font-baskerville text-sm leading-6 md:ml-5 lg:w-1/2">
         <div className="mb-5 flex w-fit flex-col items-center font-alatsi">
           <Image

@@ -14,7 +14,7 @@ export interface Homepage {
   id: number;
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    heroImageText: string;
-    heroImage: { data: Media };
+    heroFallbackImage: { data: Media };
     heroImageCallToActionImage: { data: Media };
     heroImageCallToActionText?: string;
     heroImageDarkenPercent?: number;
@@ -38,6 +38,7 @@ export interface Homepage {
     collageImage4: { data: Media };
     collageButton4: Link;
     carouselImages: { data: Media[] };
+    heroVideo: { data: Media };
     locale: string;
     localizations?: { data: Homepage[] };
   };
@@ -45,7 +46,7 @@ export interface Homepage {
 export interface Homepage_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
-  heroImage: Media_Plain;
+  heroFallbackImage: Media_Plain;
   heroImageCallToActionImage: Media_Plain;
   heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
@@ -69,6 +70,7 @@ export interface Homepage_Plain {
   collageImage4: Media_Plain;
   collageButton4: Link_Plain;
   carouselImages: Media_Plain[];
+  heroVideo: Media_Plain;
   locale: string;
   localizations?: Homepage_Plain[];
 }
@@ -76,7 +78,7 @@ export interface Homepage_Plain {
 export interface Homepage_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
-  heroImage: number;
+  heroFallbackImage: number;
   heroImageCallToActionImage: number;
   heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
@@ -100,6 +102,7 @@ export interface Homepage_NoRelations {
   collageImage4: number;
   collageButton4: Link_NoRelations;
   carouselImages: number[];
+  heroVideo: number;
   locale: string;
   localizations?: Homepage[];
 }
@@ -107,7 +110,7 @@ export interface Homepage_NoRelations {
 export interface Homepage_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  heroImageText: string;
-  heroImage: AdminPanelRelationPropertyModification<Media_Plain>;
+  heroFallbackImage: AdminPanelRelationPropertyModification<Media_Plain>;
   heroImageCallToActionImage: AdminPanelRelationPropertyModification<Media_Plain>;
   heroImageCallToActionText?: string;
   heroImageDarkenPercent?: number;
@@ -131,6 +134,7 @@ export interface Homepage_AdminPanelLifeCycle {
   collageImage4: AdminPanelRelationPropertyModification<Media_Plain>;
   collageButton4: Link_Plain;
   carouselImages: AdminPanelRelationPropertyModification<Media_Plain>[];
+  heroVideo: AdminPanelRelationPropertyModification<Media_Plain>;
   locale: string;
   localizations?: Homepage[];
 }
