@@ -60,7 +60,7 @@ export default async function Home() {
               }}
             ></div>
             <div className="absolute left-1/2 top-1/2 h-full w-[90%] sm:w-[68%]">
-              <div className="absolute -left-1/2 -top-1/2 z-10 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
+              <div className="absolute -left-1/2 -top-1/2 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
                 {pageData.attributes.heroImageText.split("\\n").map((line) => {
                   return (
                     <h1
@@ -74,7 +74,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className="relative z-20 mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
+          <div className="relative mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
             <Image
               className=" max-h-16 max-w-16 rounded-sm border-8 border-white"
               src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroImageCallToActionImage.data.attributes.url}
