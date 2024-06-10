@@ -34,9 +34,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
       </div>
       <div className="w-full font-grotesk font-medium leading-relaxed lg:w-[60%]">
         {props.sectionData.title && (
-          <h2 className="mb-7 inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-2xl">
-            {props.sectionData.title}
-          </h2>
+          <h2 className="mb-7 pr-2 font-baskerville text-2xl leading-snug sm:pr-7 sm:text-2xl">{props.sectionData.title}</h2>
         )}
         {renderParagraphs(props.sectionData.text, props.sectionData.linksToInsert)}
         {props.sectionData.button && (
@@ -68,7 +66,7 @@ const renderParagraphs = (text: string, links: LinkType[]) => {
             return (
               <React.Fragment key={partIndex}>
                 {highlightedPart}
-                <Link href={link.linkAddress} className="text-blue-500 underline">
+                <Link href={link.linkAddress} className="text-blue-500 underline" target="_blank">
                   {link.linkText}
                 </Link>
               </React.Fragment>
