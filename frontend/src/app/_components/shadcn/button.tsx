@@ -14,7 +14,7 @@ const buttonVariants = cva(
         light: "bg-white text-rustyBrown hover:bg-white/90 font-bold",
       },
       size: {
-        default: "h-10 py-7 px-5 sm:px-10",
+        default: "h-10 py-8 px-5 sm:px-10",
         large: "h-10 min-w-40 px-10 py-5",
       },
     },
