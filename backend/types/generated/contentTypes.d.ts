@@ -880,6 +880,13 @@ export interface ApiFooterFooter extends Schema.SingleType {
           localized: true;
         };
       }>;
+    leftColumnText: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'A special thanks to our incredible Ride to Walk volunteers\u2014meet the dedicated individuals who make all this possible.'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

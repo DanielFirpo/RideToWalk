@@ -117,17 +117,26 @@
       "default": "©2024 Ride to Walk, a 501(c)(3) nonprofit organization. All rights reserved."
     },
     "leftImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "leftColumnText": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
+      "type": "string",
+      "default": "A special thanks to our incredible Ride to Walk volunteers—meet the dedicated individuals who make all this possible."
     }
   }
 }

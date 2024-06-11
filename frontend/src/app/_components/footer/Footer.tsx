@@ -26,14 +26,14 @@ export default async function Footer() {
 
   return (
     <footer
-      className="mt-9 flex bg-[center_top_1000rem] pr-20 sm:bg-right-bottom"
+      className="mt-9 flex bg-[center_top_1000rem] pb-10 pr-20 sm:bg-right-bottom"
       style={{
         backgroundImage: cornerBackgroundImage,
         backgroundSize: "12rem auto",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="m-10 mr-5 mt-0 hidden w-1/2 items-center justify-center lg:flex">
+      <div className="ml-10 mr-5 hidden w-1/2 flex-col items-center justify-center text-center lg:flex">
         <Image
           className="mb-5 max-h-[700px] w-auto"
           src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.leftImage.data.attributes.url}
@@ -41,6 +41,9 @@ export default async function Footer() {
           width={footerData.attributes.leftImage.data.attributes.width}
           height={footerData.attributes.leftImage.data.attributes.height}
         />
+        {footerData.attributes.leftColumnText && (
+          <span className="font-baskerville text-sm leading-6">{footerData.attributes.leftColumnText}</span>
+        )}
       </div>
       <div className="ml-12 font-baskerville text-sm leading-6 md:ml-5 lg:w-1/2">
         <div className="mb-5 flex w-fit flex-col items-center font-alatsi">
@@ -83,7 +86,7 @@ export default async function Footer() {
             </Link>
           ))}
         </div>
-        <div className="pb-10 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
+        <div className="pt-10 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
       </div>
     </footer>
   );
