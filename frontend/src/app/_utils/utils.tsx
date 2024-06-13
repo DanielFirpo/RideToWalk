@@ -11,6 +11,8 @@ import Button from "../_components/page_sections/Button";
 import Text from "../_components/page_sections/Text";
 import Quote from "../_components/page_sections/Quote";
 import Divider from "../_components/page_sections/Divider";
+import { Link as LinkType } from "../../../../backend/src/components/link/interfaces/Link";
+import Link from "next/link";
 
 export function getBackgroundImage(srcSet = "") {
   const imageSet = srcSet
@@ -73,4 +75,50 @@ export const getPageSection = ({ __component, ...rest }: { __component: string }
   }
 
   return PageSection ? <PageSection key={`index-${index}`} sectionData={rest} /> : null;
+};
+
+export const addHighlightsLinksAndNewLines = (text: string, links: LinkType[]) => {
+  const lines = text.split("\\n");
+  let linkIndex = 0;
+
+  return lines.map((line, lineIndex) => {
+    const linkSplit = line.split("\\a");
+
+    return (
+      <p className="min-h-7" key={lineIndex}>
+        {linkSplit.map((part, partIndex) => {
+          const highlightedPart = insertHighlights(part);
+
+          if (partIndex < linkSplit.length - 1 && linkIndex < links.length) {
+            const link = links[linkIndex++];
+            return (
+              <React.Fragment key={partIndex}>
+                {highlightedPart}
+                <Link href={link.linkAddress} className="text-metalicCopper underline" target="_blank">
+                  {link.linkText}
+                </Link>
+              </React.Fragment>
+            );
+          }
+
+          return highlightedPart;
+        })}
+      </p>
+    );
+  });
+};
+
+const insertHighlights = (text: string) => {
+  const regex = /\\h(.*?)\\h/g;
+  const parts = text.split(regex);
+
+  return parts.map((part, index) =>
+    index % 2 === 1 ? (
+      <mark className="bg-transparent font-bold text-metalicCopper" key={index}>
+        {part}
+      </mark>
+    ) : (
+      part
+    ),
+  );
 };
