@@ -35,7 +35,7 @@ export default async function Footer() {
     >
       <div className="ml-10 mr-5 hidden w-1/2 flex-col items-center justify-center text-center lg:flex">
         <Image
-          className="mb-5 max-h-[700px] w-auto"
+          className="mb-5 max-h-[550px] w-auto"
           src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.leftImage.data.attributes.url}
           alt={footerData.attributes.leftImage.data.attributes.alternativeText}
           width={footerData.attributes.leftImage.data.attributes.width}
@@ -67,17 +67,18 @@ export default async function Footer() {
           );
         })}
         <div className="mt-8 flex flex-wrap gap-3 sm:w-9/12 sm:gap-0">
-          {footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
-            <div className="sm:basis-1/3" key={img.attributes.url}>
-              <Image
-                className="mb-5 h-28 w-auto"
-                src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
-                alt={img.attributes.alternativeText}
-                width={img.attributes.width}
-                height={img.attributes.height}
-              />
-            </div>
-          ))}
+          {footerData.attributes.accoladesOrSponsorImages?.data &&
+            footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
+              <div className="sm:basis-1/3" key={img.attributes.url}>
+                <Image
+                  className="mb-5 h-28 w-auto"
+                  src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
+                  alt={img.attributes.alternativeText}
+                  width={img.attributes.width}
+                  height={img.attributes.height}
+                />
+              </div>
+            ))}
         </div>
         <div className="mb-8 flex flex-wrap gap-6 text-sm sm:mr-32">
           {footerData.attributes.links.map((link) => (
