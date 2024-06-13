@@ -38,7 +38,7 @@ const contactFormSchema = z.object({
   honeypot: z.string().optional(),
 });
 
-export function ContactForm({ emailFormData }: { emailFormData: (formData: z.infer<typeof contactFormSchema>) => void }) {
+export function ContactForm() {
   const [alertOpen, setAlertOpen] = useState<boolean>(false);
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -53,9 +53,21 @@ export function ContactForm({ emailFormData }: { emailFormData: (formData: z.inf
   });
 
   async function onSubmit(values: z.infer<typeof contactFormSchema>) {
-    await emailFormData(values);
-    setAlertOpen(true);
-    form.reset();
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    }).then((response) => {
+      if (response.status === 200) {
+        setAlertOpen(true);
+        form.reset();
+      } else {
+        alert("Failed to send form data. Please manually email us instead.");
+      }
+    });
   }
 
   return (
