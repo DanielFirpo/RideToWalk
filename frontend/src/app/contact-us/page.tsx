@@ -25,7 +25,7 @@ export default async function ContactUs() {
           {addHighlightsLinksAndNewLines(pageData.attributes.aboveFormText, [])}
         </div>
       )}
-      <ContactForm></ContactForm>
+      {/* <ContactForm></ContactForm> */}
       {pageData.attributes.belowFormText && (
         <div className="mb-32 py-10 text-center font-grotesk text-base font-bold">
           {addHighlightsLinksAndNewLines(pageData.attributes.belowFormText, [])}
