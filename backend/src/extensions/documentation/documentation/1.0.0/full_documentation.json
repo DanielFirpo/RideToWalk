@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-13T02:07:06.377Z"
+    "x-generation-date": "2024-06-13T21:09:40.316Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -694,6 +694,9 @@
           "leftColumnText": {
             "type": "string"
           },
+          "footerButton": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
+          },
           "locale": {
             "type": "string"
           }
@@ -785,6 +788,9 @@
               },
               "leftColumnText": {
                 "type": "string"
+              },
+              "footerButton": {
+                "$ref": "#/components/schemas/LinkLinkComponent"
               },
               "locale": {
                 "type": "string"
@@ -1982,6 +1988,9 @@
           },
           "leftColumnText": {
             "type": "string"
+          },
+          "footerButton": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
           },
           "createdAt": {
             "type": "string",
@@ -5848,6 +5857,9 @@
           "donateButton": {
             "$ref": "#/components/schemas/LinkLinkComponent"
           },
+          "contactUsButton": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
+          },
           "locale": {
             "type": "string"
           }
@@ -5965,6 +5977,9 @@
                 "type": "string"
               },
               "donateButton": {
+                "$ref": "#/components/schemas/LinkLinkComponent"
+              },
+              "contactUsButton": {
                 "$ref": "#/components/schemas/LinkLinkComponent"
               },
               "locale": {
@@ -6805,6 +6820,9 @@
             "type": "string"
           },
           "donateButton": {
+            "$ref": "#/components/schemas/LinkLinkComponent"
+          },
+          "contactUsButton": {
             "$ref": "#/components/schemas/LinkLinkComponent"
           },
           "createdAt": {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { Button } from "../shadcn/button";
 import Image, { getImageProps } from "next/image";
-import { getBackgroundImage } from "../../_utils/utils";
+import { addHighlightsLinksAndNewLines, getBackgroundImage } from "../../_utils/utils";
 
 export default async function Footer() {
   const footerData: FooterType = (await fetchAPI("/footer", { populate: "*" })).data;
@@ -59,13 +59,7 @@ export default async function Footer() {
         </div>
 
         <address className="mb-5 not-italic">{footerData.attributes.address}</address>
-        {footerData.attributes.bodyText.split("\\n").map((paragraph) => {
-          return (
-            <p key={paragraph} className="mb-4">
-              {paragraph}
-            </p>
-          );
-        })}
+        {addHighlightsLinksAndNewLines(footerData.attributes.bodyText, [{ linkAddress: "/contact", linkText: "Contact Page" }])}
         <div className="mt-8 flex flex-wrap gap-3 sm:w-9/12 sm:gap-0">
           {footerData.attributes.accoladesOrSponsorImages?.data &&
             footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
@@ -80,6 +74,13 @@ export default async function Footer() {
               </div>
             ))}
         </div>
+        {footerData.attributes.footerButton && (
+          <Link href={footerData.attributes.footerButton.linkAddress}>
+            <Button variant="secondary" size="large" className="mb-10">
+              {footerData.attributes.footerButton.linkText}
+            </Button>
+          </Link>
+        )}
         <div className="mb-8 flex flex-wrap gap-6 text-sm sm:mr-32">
           {footerData.attributes.links.map((link) => (
             <Link className="text-nowrap" key={link.linkText} href={link.linkAddress}>

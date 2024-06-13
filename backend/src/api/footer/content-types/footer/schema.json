@@ -137,6 +137,16 @@
       },
       "type": "string",
       "default": "A special thanks to our incredible Ride to Walk volunteers—meet the dedicated individuals who make all this possible."
+    },
+    "footerButton": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "link.link"
     }
   }
 }

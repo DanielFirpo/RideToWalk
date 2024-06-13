@@ -21,6 +21,7 @@ export interface Footer {
     copyrightNotice: string;
     leftImage: { data: Media };
     leftColumnText?: string;
+    footerButton?: Link;
     locale: string;
     localizations?: { data: Footer[] };
   };
@@ -38,6 +39,7 @@ export interface Footer_Plain {
   copyrightNotice: string;
   leftImage: Media_Plain;
   leftColumnText?: string;
+  footerButton?: Link_Plain;
   locale: string;
   localizations?: Footer_Plain[];
 }
@@ -55,6 +57,7 @@ export interface Footer_NoRelations {
   copyrightNotice: string;
   leftImage: number;
   leftColumnText?: string;
+  footerButton?: Link_NoRelations;
   locale: string;
   localizations?: Footer[];
 }
@@ -72,6 +75,7 @@ export interface Footer_AdminPanelLifeCycle {
   copyrightNotice: string;
   leftImage: AdminPanelRelationPropertyModification<Media_Plain>;
   leftColumnText?: string;
+  footerButton?: Link_Plain;
   locale: string;
   localizations?: Footer[];
 }

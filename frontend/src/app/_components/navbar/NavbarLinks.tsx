@@ -35,11 +35,11 @@ export default function NavbarLinks({ navData }: { navData?: NavbarType }) {
   return (
     <>
       <NavigationMenu>
-        <NavigationMenuList className="font-grotesk w-full flex-wrap items-center xl:flex-nowrap">
+        <NavigationMenuList className="w-full flex-wrap items-center font-grotesk xl:flex-nowrap">
           {linkCategories.map((linkCategory) =>
             navData?.attributes[linkCategory] && (navData?.attributes[linkCategory].length ?? 0) > 1 ? (
               <NavigationMenuItem key={linkCategory}>
-                <NavigationMenuTrigger className="cursor-default px-2 text-sm text-white xl:px-4">
+                <NavigationMenuTrigger className="cursor-default px-2 text-sm text-white 1.5xl:px-4">
                   {navData?.attributes[linkCategory][0].linkText}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>

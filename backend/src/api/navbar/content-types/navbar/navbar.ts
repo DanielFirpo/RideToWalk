@@ -33,6 +33,7 @@ export interface Navbar {
     horseBoardingLinks: Link[];
     slogan?: string;
     donateButton?: Link;
+    contactUsButton?: Link;
     locale: string;
     localizations?: { data: Navbar[] };
   };
@@ -62,6 +63,7 @@ export interface Navbar_Plain {
   horseBoardingLinks: Link_Plain[];
   slogan?: string;
   donateButton?: Link_Plain;
+  contactUsButton?: Link_Plain;
   locale: string;
   localizations?: Navbar_Plain[];
 }
@@ -91,6 +93,7 @@ export interface Navbar_NoRelations {
   horseBoardingLinks: Link_NoRelations[];
   slogan?: string;
   donateButton?: Link_NoRelations;
+  contactUsButton?: Link_NoRelations;
   locale: string;
   localizations?: Navbar[];
 }
@@ -120,6 +123,7 @@ export interface Navbar_AdminPanelLifeCycle {
   horseBoardingLinks: Link_Plain[];
   slogan?: string;
   donateButton?: Link_Plain;
+  contactUsButton?: Link_Plain;
   locale: string;
   localizations?: Navbar[];
 }

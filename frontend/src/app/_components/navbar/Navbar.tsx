@@ -139,14 +139,25 @@ export default async function Navbar() {
           </div>
         </div>
         <div className="mx-auto flex h-[80px] w-full items-center justify-center bg-rustyBrown pr-5 xl:pr-16 1.5xl:pr-8">
-          <div className="hidden w-full items-center justify-center md:flex xl:justify-between">
-            <div className="w-52"></div>
+          <div className="hidden w-full items-center justify-center md:flex 1.5xl:justify-between">
+            <div className="min-w-52"></div>
             <NavbarLinks navData={navData}></NavbarLinks>
-            {navData?.attributes.donateButton && (
-              <Link className="hidden 1.5xl:flex" href={navData?.attributes.donateButton?.linkAddress} target="_blank">
-                <Button size={"large"}>{navData?.attributes.donateButton?.linkText}</Button>
-              </Link>
-            )}
+            <div className="hidden max-h-10 min-w-40 flex-row-reverse flex-wrap gap-3 overflow-hidden 1.5xl:flex">
+              {navData?.attributes.donateButton && (
+                <Link href={navData?.attributes.donateButton?.linkAddress} target="_blank">
+                  <Button className="text-nowrap" size={"small"}>
+                    {navData?.attributes.donateButton?.linkText}
+                  </Button>
+                </Link>
+              )}
+              {navData?.attributes.contactUsButton && (
+                <Link href={navData?.attributes.contactUsButton?.linkAddress} target="_blank">
+                  <Button className="text-nowrap" size={"small"}>
+                    {navData?.attributes.contactUsButton?.linkText}
+                  </Button>
+                </Link>
+              )}
+            </div>
           </div>
           <div className="ml-auto block md:hidden">
             <MobileNavMenu linkCategories={linkCategories} navData={navData}></MobileNavMenu>

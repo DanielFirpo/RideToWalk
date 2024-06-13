@@ -958,6 +958,12 @@ export interface ApiFooterFooter extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'A special thanks to our incredible Ride to Walk volunteers\u2014meet the dedicated individuals who make all this possible.'>;
+    footerButton: Attribute.Component<'link.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1480,6 +1486,12 @@ export interface ApiNavbarNavbar extends Schema.SingleType {
       }> &
       Attribute.DefaultTo<'Healing on Horseback'>;
     donateButton: Attribute.Component<'link.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contactUsButton: Attribute.Component<'link.link'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
