@@ -31,7 +31,7 @@ export default async function Home() {
               className="hidden w-full sm:block"
               width={pageData.attributes.heroVideo.data.attributes.width}
               height={pageData.attributes.heroVideo.data.attributes.height}
-              preload="none"
+              preload="metadata"
               autoPlay
               muted
               loop
@@ -57,8 +57,8 @@ export default async function Home() {
                 filter: `brightness(${darkenPecentage}%)`,
               }}
             ></div>
-            <div className="absolute left-1/2 top-1/2 h-full w-[90%] sm:w-[68%]">
-              <div className="absolute -left-1/2 -top-1/2 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
+            <div className="absolute left-1/2 top-1/2 -z-20 h-full w-[90%] sm:w-[68%]">
+              <div className="absolute -left-1/2 -top-1/2 z-0 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
                 {pageData.attributes.heroImageText.split("\\n").map((line) => {
                   return (
                     <h1
