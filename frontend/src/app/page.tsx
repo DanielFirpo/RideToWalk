@@ -72,7 +72,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div className="relative mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
+          <div className="relative mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-[19rem] sm:text-left">
             <Image
               className=" max-h-16 max-w-16 rounded-sm border-8 border-white"
               src={pageData.attributes.heroImageCallToActionImage.data.attributes.url}
@@ -81,7 +81,7 @@ export default async function Home() {
               height={pageData.attributes.heroImageCallToActionImage.data.attributes.height}
               priority
             />
-            <span className="mx-auto pl-5 font-semibold text-white sm:ml-5 sm:mr-0 sm:pl-0">
+            <span className="mx-auto pl-5 font-grotesk font-semibold text-white sm:ml-5 sm:mr-0 sm:pl-0">
               {pageData.attributes.heroImageCallToActionText}&nbsp;
               {pageData.attributes.heroImageCallToActionLink && (
                 <Link href={pageData.attributes.heroImageCallToActionLink?.linkAddress} className="underline">

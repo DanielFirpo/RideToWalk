@@ -16,4 +16,10 @@ const nextConfig = {
     },
 };
 
+console.warn("next image domain", {
+    protocol: 'https',
+    hostname: process.env.ALLOWED_IMAGE_DOMAIN,
+    port: ''
+});
+
 export default nextConfig;
