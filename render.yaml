@@ -48,6 +48,16 @@ services:
         sync: false
       - key: APP_KEYS
         sync: false
+      - key: R2_ACCESS_KEY
+        sync: false
+      - key: R2_SECRET_KEY
+        sync: false
+      - key: R2_BUCKET_NAME
+        sync: false
+      - key: R2_ENDPOINT
+        sync: false
+      - key: R2_PUBLIC_ACCESS_URL
+        sync: false
 
 databases:
   - name: strapi
