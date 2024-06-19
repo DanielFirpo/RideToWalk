@@ -17,7 +17,7 @@ export default async function Footer() {
       alt: "",
       width: footerData.attributes.bottomRightDecoration.data.attributes.width,
       height: footerData.attributes.bottomRightDecoration.data.attributes.height,
-      src: process.env.NEXT_PUBLIC_API_URL + footerData.attributes.bottomRightDecoration.data.attributes.url,
+      src: footerData.attributes.bottomRightDecoration.data.attributes.url,
       priority: true,
     });
 
@@ -36,7 +36,7 @@ export default async function Footer() {
       <div className="ml-10 mr-5 hidden w-1/2 flex-col items-center justify-center text-center lg:flex">
         <Image
           className="mb-5 max-h-[550px] w-auto"
-          src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.leftImage.data.attributes.url}
+          src={footerData.attributes.leftImage.data.attributes.url}
           alt={footerData.attributes.leftImage.data.attributes.alternativeText}
           width={footerData.attributes.leftImage.data.attributes.width}
           height={footerData.attributes.leftImage.data.attributes.height}
@@ -49,7 +49,7 @@ export default async function Footer() {
         <div className="mb-5 flex w-fit flex-col items-center font-alatsi">
           <Image
             className="h-48 w-auto pt-1"
-            src={process.env.NEXT_PUBLIC_API_URL + footerData.attributes.logo.data.attributes.url}
+            src={footerData.attributes.logo.data.attributes.url}
             alt={footerData.attributes.logo.data.attributes.alternativeText}
             width={footerData.attributes.logo.data.attributes.width}
             height={footerData.attributes.logo.data.attributes.height}
@@ -66,7 +66,7 @@ export default async function Footer() {
               <div className="sm:basis-1/3" key={img.attributes.url}>
                 <Image
                   className="mb-5 h-28 w-auto"
-                  src={process.env.NEXT_PUBLIC_API_URL + img.attributes.url}
+                  src={img.attributes.url}
                   alt={img.attributes.alternativeText}
                   width={img.attributes.width}
                   height={img.attributes.height}

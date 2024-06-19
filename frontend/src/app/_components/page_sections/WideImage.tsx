@@ -10,7 +10,7 @@ export default async function WideImage(props: { sectionData: WideImageType }) {
           paddingRight: props.sectionData.addPaddingOnLeftAndRight ? "3.5rem" : 0,
         }}
         alt={props.sectionData.image.data.attributes.alternativeText}
-        src={process.env.NEXT_PUBLIC_API_URL + props.sectionData.image.data.attributes.url}
+        src={props.sectionData.image.data.attributes.url}
         width={props.sectionData.image.data.attributes.width}
         height={props.sectionData.image.data.attributes.height}
       ></Image>

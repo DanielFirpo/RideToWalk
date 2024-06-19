@@ -29,7 +29,7 @@ export function HomepageCarousel({ images }: { images: Media[] }) {
           >
             <Image
               className="h-full w-full"
-              src={process.env.NEXT_PUBLIC_API_URL + image.attributes.url}
+              src={image.attributes.url}
               alt={image.attributes.alternativeText}
               width={image.attributes.width}
               height={image.attributes.height}

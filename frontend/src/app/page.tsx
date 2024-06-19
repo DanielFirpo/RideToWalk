@@ -44,10 +44,7 @@ export default async function Home() {
                 filter: `brightness(${darkenPecentage}%)`,
               }}
             >
-              <source
-                src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroVideo.data.attributes.url}
-                type="video/webm"
-              />
+              <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" />
               {/* fallback image: */}
             </video>
             <div
@@ -78,7 +75,7 @@ export default async function Home() {
           <div className="relative mr-auto mt-0 flex h-20 w-full items-center justify-start bg-rustyBrown p-4 text-center sm:-mt-24 sm:h-24 sm:w-72 sm:text-left">
             <Image
               className=" max-h-16 max-w-16 rounded-sm border-8 border-white"
-              src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroImageCallToActionImage.data.attributes.url}
+              src={pageData.attributes.heroImageCallToActionImage.data.attributes.url}
               alt={pageData.attributes.heroImageCallToActionImage.data.attributes.alternativeText}
               width={pageData.attributes.heroImageCallToActionImage.data.attributes.width}
               height={pageData.attributes.heroImageCallToActionImage.data.attributes.height}
@@ -124,10 +121,7 @@ export default async function Home() {
           </div>
           <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 text-white sm:ml-14 sm:mr-14 lg:ml-6 lg:w-1/2">
             <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
-              <source
-                src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.featuredVideo.data.attributes.url + "#t=0.1"}
-                type="video/mp4"
-              />
+              <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=0.1"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
@@ -140,7 +134,7 @@ export default async function Home() {
         <section className="flex items-center">
           <Image
             className="mr-5 mt-auto hidden aspect-square w-2/5 lg:block"
-            src={process.env.NEXT_PUBLIC_API_URL + pageData.attributes.detailedAboutSectionImage.data.attributes.url}
+            src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
             alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
@@ -184,7 +178,7 @@ export default async function Home() {
               {/*  max-h-32 max-w-32  */}
               <Image
                 className="m-auto px-3 pt-1"
-                src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
+                src={navData.attributes.logo.data.attributes.url}
                 alt={navData.attributes.logo.data.attributes.alternativeText}
                 width={navData.attributes.logo.data.attributes.width}
                 height={navData.attributes.logo.data.attributes.height}
@@ -322,7 +316,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.heroFallbackImage.data.attributes.width,
     height: pageData.attributes.heroFallbackImage.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.heroFallbackImage.data.attributes.url,
+    src: pageData.attributes.heroFallbackImage.data.attributes.url,
     priority: true,
   });
 
@@ -332,7 +326,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.missionStatementBackgroundImage.data.attributes.width,
     height: pageData.attributes.missionStatementBackgroundImage.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.missionStatementBackgroundImage.data.attributes.url,
+    src: pageData.attributes.missionStatementBackgroundImage.data.attributes.url,
   });
 
   const missionStatementBackgroundImage = getBackgroundImage(missionStatementProps.props.srcSet);
@@ -341,7 +335,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.collageImage1.data.attributes.width,
     height: pageData.attributes.collageImage1.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.collageImage1.data.attributes.url,
+    src: pageData.attributes.collageImage1.data.attributes.url,
     priority: true,
   });
 
@@ -351,7 +345,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.collageImage2.data.attributes.width,
     height: pageData.attributes.collageImage2.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.collageImage2.data.attributes.url,
+    src: pageData.attributes.collageImage2.data.attributes.url,
     priority: true,
   });
 
@@ -361,7 +355,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.collageImage3.data.attributes.width,
     height: pageData.attributes.collageImage3.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.collageImage3.data.attributes.url,
+    src: pageData.attributes.collageImage3.data.attributes.url,
     priority: true,
   });
 
@@ -371,7 +365,7 @@ function getBackgroundImages(pageData: Homepage) {
     alt: "",
     width: pageData.attributes.collageImage4.data.attributes.width,
     height: pageData.attributes.collageImage4.data.attributes.height,
-    src: process.env.NEXT_PUBLIC_API_URL + pageData.attributes.collageImage4.data.attributes.url,
+    src: pageData.attributes.collageImage4.data.attributes.url,
     priority: true,
   });
 

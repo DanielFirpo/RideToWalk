@@ -36,7 +36,7 @@ export default async function Navbar() {
         <div className="absolute ml-12 flex h-full w-36 items-center bg-white text-center font-alatsi">
           <Image
             className="p-1 pt-0"
-            src={process.env.NEXT_PUBLIC_API_URL + navData.attributes.logo.data.attributes.url}
+            src={navData.attributes.logo.data.attributes.url}
             alt={navData.attributes.logo.data.attributes.alternativeText}
             width={navData.attributes.logo.data.attributes.width}
             height={navData.attributes.logo.data.attributes.height}

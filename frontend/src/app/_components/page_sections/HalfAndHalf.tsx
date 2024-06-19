@@ -24,7 +24,7 @@ export default async function HalfAndHalf(props: { sectionData: HalfAndHalfType 
         }}
       >
         <Image
-          src={process.env.NEXT_PUBLIC_API_URL + props.sectionData.image.data.attributes.url}
+          src={props.sectionData.image.data.attributes.url}
           alt={props.sectionData.image.data.attributes.alternativeText}
           width={props.sectionData.image.data.attributes.width}
           height={props.sectionData.image.data.attributes.height}

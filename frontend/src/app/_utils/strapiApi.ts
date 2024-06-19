@@ -12,7 +12,7 @@ export function getImageURLBySize(image: Media, size: ImageSize = "medium"): str
   const formats: ImageSize[] = ["thumbnail", "small", "medium", "large"];
 
   const requestedImage = image.attributes.formats[size]?.url;
-  if (requestedImage) return process.env.NEXT_PUBLIC_API_URL + requestedImage;
+  if (requestedImage) return requestedImage;
 
   let smaller = formats.indexOf(size) - 1;
   let larger = formats.indexOf(size) + 1;
@@ -22,9 +22,9 @@ export function getImageURLBySize(image: Media, size: ImageSize = "medium"): str
     const largerFormat: ImageSize = formats[larger];
 
     if (image.attributes.formats[smallerFormat]) {
-      return process.env.NEXT_PUBLIC_API_URL + image.attributes.formats[smallerFormat].url;
+      return image.attributes.formats[smallerFormat].url;
     } else if (image.attributes.formats[largerFormat]) {
-      return process.env.NEXT_PUBLIC_API_URL + image.attributes.formats[largerFormat].url;
+      return image.attributes.formats[largerFormat].url;
     }
   }
 }
