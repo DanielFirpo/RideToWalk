@@ -20,6 +20,8 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "strapi-plugin-schemas-to-ts": "^1.3.2",
+    "strapi-provider-cloudflare-r2": "^0.3.0",
+    "strapi-provider-upload-cloudflare-r2": "^1.0.2",
     "styled-components": "5.3.3"
   },
   "author": {

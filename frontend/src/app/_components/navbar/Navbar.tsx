@@ -69,7 +69,7 @@ export default async function Navbar() {
             <div className="ml-auto mr-7 flex items-center">
               <div className="flex items-center pr-4 text-eggshell">
                 <span className="icon-[mdi--address-marker] mr-1 h-5 w-5 text-terracottaOrange"></span>
-                <address className="not-italic">
+                <address className="text-nowrap not-italic">
                   <a
                     target="_blank"
                     href="https://www.google.com/maps/place/Ride+To+Walk/@38.8480856,-121.2161017,15z/data=!4m2!3m1!1s0x0:0x226fd13fb123fc4a?sa=X&ved=1t:2428&ictx=111"
@@ -78,11 +78,11 @@ export default async function Navbar() {
                   </a>
                 </address>
               </div>
-              <div className="flex items-center px-4 text-eggshell">
+              <div className="flex items-center text-nowrap px-4 text-eggshell">
                 <span className="icon-[streamline--send-email-solid] mr-2 h-4 w-4 text-terracottaOrange"></span>
                 <a href={"mailto:" + navData?.attributes.email}>{navData?.attributes.email}</a>
               </div>
-              <div className="flex items-center px-4 text-eggshell">
+              <div className="flex items-center text-nowrap px-4 text-eggshell">
                 <span className="icon-[fa-solid--phone] mr-2 h-4 w-4 text-terracottaOrange"></span>
                 <a href={"tel:" + navData?.attributes.phoneNumber?.replace(/\D/g, "")}>{navData?.attributes.phoneNumber}</a>
               </div>

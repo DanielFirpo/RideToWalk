@@ -35,6 +35,7 @@ export default async function Home() {
               autoPlay
               muted
               loop
+              playsInline
               style={{
                 aspectRatio: "2 / 1",
                 background: heroFallbackImage,
