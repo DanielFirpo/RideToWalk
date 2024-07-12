@@ -245,6 +245,7 @@ export default async function Home() {
           <div className="flex items-center text-eggshell md:pr-4">
             <address className="py-6 text-center font-baskervilleItalic text-base tracking-widest text-metalicCopper sm:text-lg md:text-left md:text-xl">
               <a
+                className="py-4"
                 target="_blank"
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(navData?.attributes.address)}`}
               >

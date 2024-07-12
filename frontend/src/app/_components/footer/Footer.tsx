@@ -83,7 +83,7 @@ export default async function Footer() {
         )}
         <div className="mb-8 flex flex-wrap gap-6 text-sm sm:mr-32">
           {footerData.attributes.links.map((link) => (
-            <Link className="text-nowrap" key={link.linkText} href={link.linkAddress}>
+            <Link className="text-nowrap py-3" key={link.linkText} href={link.linkAddress}>
               {link.linkText}
             </Link>
           ))}
