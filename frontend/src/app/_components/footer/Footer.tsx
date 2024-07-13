@@ -35,7 +35,7 @@ export default async function Footer() {
     >
       <div className="ml-10 mr-5 hidden w-1/2 flex-col items-center justify-center text-center lg:flex">
         <Image
-          className="mb-5 max-h-[550px] w-auto"
+          className="mb-5 max-h-[550px] w-full object-contain"
           src={footerData.attributes.leftImage.data.attributes.url}
           alt={footerData.attributes.leftImage.data.attributes.alternativeText}
           width={footerData.attributes.leftImage.data.attributes.width}
