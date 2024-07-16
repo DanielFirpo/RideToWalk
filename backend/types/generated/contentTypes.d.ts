@@ -1060,7 +1060,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       }> &
       Attribute.DefaultTo<'We believe in healing on horseback:'>;
     missionStatementSubtitle: Attribute.String &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1075,7 +1074,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }>;
     missionStatementButton: Attribute.Component<'link.link'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1203,6 +1201,47 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }>;
     heroImageCallToActionText: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ridersSectionText1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Ride To Walk brings together dedicated volunteers, instructors, therapists, and the rider\u2019s family members.'>;
+    ridersSectionImages: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ridersSectionText2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Each rider (and their horse) is accompanied by a trained Leader,  two Side Walkers, and a Physical Therapist (when needed) who are there for safety and emotional support.'>;
+    testimonialSectionHeader: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Listen to these short testimonials from two of our rider\u2019s mothers and how much this program means to their families.'>;
+    testimonialVideo1: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    testimonialVideo2: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

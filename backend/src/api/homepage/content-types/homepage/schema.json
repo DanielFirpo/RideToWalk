@@ -96,7 +96,7 @@
       },
       "type": "string",
       "default": "\"the purposeful manipulation of equine movement as a therapy tool to engage sensory, neuromotor and cognitive systems\"",
-      "required": true
+      "required": false
     },
     "missionStatementText": {
       "pluginOptions": {
@@ -116,7 +116,7 @@
         }
       },
       "component": "link.link",
-      "required": true
+      "required": false
     },
     "featuredVideo": {
       "type": "media",
@@ -328,6 +328,71 @@
         }
       },
       "type": "string",
+      "required": true
+    },
+    "ridersSectionText1": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "Ride To Walk brings together dedicated volunteers, instructors, therapists, and the rider’s family members."
+    },
+    "ridersSectionImages": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ridersSectionText2": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "Each rider (and their horse) is accompanied by a trained Leader,  two Side Walkers, and a Physical Therapist (when needed) who are there for safety and emotional support."
+    },
+    "testimonialSectionHeader": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "default": "Listen to these short testimonials from two of our rider’s mothers and how much this program means to their families."
+    },
+    "testimonialVideo1": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "testimonialVideo2": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     }
   }
