@@ -131,15 +131,16 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="flex items-center">
+        <section className="flex flex-col items-center gap-5 md:flex-row">
           <Image
-            className="mr-5 mt-auto hidden aspect-square w-2/5 lg:block"
+            className="mt-auto aspect-square w-[80%] lg:w-2/5 lg:min-w-[40%]"
             src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
             alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
+            objectFit="contain"
           />
-          <div className="mx-4 p-6 font-grotesk font-medium leading-relaxed sm:mx-14 lg:mr-14">
+          <div className="mx-4 p-6 font-grotesk font-medium leading-relaxed lg:mx-14">
             {pageData.attributes.detailedAboutSectionText.split("\\n").map((line) => {
               const regex = /\\h(.*?)\\h/g;
               const parts = line.split(regex);
@@ -170,6 +171,33 @@ export default async function Home() {
             <Link href={pageData.attributes.detailedAboutSectionButton.linkAddress} target="_blank">
               <Button variant="secondary">{pageData.attributes.detailedAboutSectionButton.linkText}</Button>
             </Link>
+          </div>
+        </section>
+        <section>
+          <div className="w-auto px-10 py-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
+            <h2 className="inline pr-2 font-baskerville text-lg leading-snug sm:block sm:pr-7 sm:text-xl">
+              <div className="mx-32 mb-6 border-b border-metalicCopper"></div>
+              {pageData.attributes.ridersSectionText1}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-5 py-8">
+              {pageData.attributes.ridersSectionImages?.data.map((image) => {
+                return (
+                  <Image
+                    style={{ width: 95 / (pageData.attributes.ridersSectionImages?.data.length ?? 1) + "%" }}
+                    key={image.attributes.url}
+                    className="mt-auto aspect-[31/39] max-h-[450px] w-[30%] min-w-[300px]"
+                    src={image.attributes.url}
+                    alt={image.attributes.alternativeText}
+                    width={image.attributes.width}
+                    height={image.attributes.height}
+                  />
+                );
+              })}
+            </div>
+            <h2 className="inline pr-2 font-baskerville text-lg leading-snug sm:block sm:pr-7 sm:text-xl">
+              {pageData.attributes.ridersSectionText2}
+              <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
+            </h2>
           </div>
         </section>
         <section className="relative flex flex-col flex-wrap md:flex-row">
@@ -305,6 +333,38 @@ export default async function Home() {
         </section>
         <section className="w-full">
           <HomepageCarousel images={pageData.attributes.carouselImages.data}></HomepageCarousel>
+        </section>
+        <section>
+          <div className="w-auto px-10 pb-12 pt-12 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
+            <h2 className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
+              {pageData.attributes.testimonialSectionHeader}
+              <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
+            </h2>
+            <div className="mt-6 flex flex-col lg:flex-row">
+              <div className="flex w-fit flex-col items-center justify-center p-3 text-white lg:w-1/2">
+                <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
+                  <source src={pageData.attributes.testimonialVideo1.data.attributes.url + "#t=0.1"} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="flex h-11 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
+                  <p className="text-center font-grotesk text-xs font-medium leading-relaxed text-black sm:text-sm">
+                    {pageData.attributes.testimonialVideo1.data.attributes.caption}
+                  </p>
+                </div>
+              </div>
+              <div className="flex w-fit flex-col items-center justify-center p-3 text-white lg:w-1/2">
+                <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
+                  <source src={pageData.attributes.testimonialVideo2.data.attributes.url + "#t=0.1"} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="flex h-11 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
+                  <p className="text-center font-grotesk text-xs font-medium leading-relaxed text-black sm:text-sm">
+                    {pageData.attributes.testimonialVideo2.data.attributes.caption}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </>

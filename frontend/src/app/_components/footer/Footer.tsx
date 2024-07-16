@@ -42,7 +42,11 @@ export default async function Footer() {
           height={footerData.attributes.leftImage.data.attributes.height}
         />
         {footerData.attributes.leftColumnText && (
-          <span className="font-baskerville text-sm leading-6">{footerData.attributes.leftColumnText}</span>
+          <span className="font-baskerville text-sm leading-6">
+            {addHighlightsLinksAndNewLines(footerData.attributes.leftColumnText, [
+              { linkAddress: "/contact", linkText: "contact us" },
+            ])}
+          </span>
         )}
       </div>
       <div className="ml-12 font-baskerville text-sm leading-6 md:ml-5 lg:w-1/2">
@@ -59,7 +63,9 @@ export default async function Footer() {
         </div>
 
         <address className="mb-5 not-italic">{footerData.attributes.address}</address>
-        {addHighlightsLinksAndNewLines(footerData.attributes.bodyText, [{ linkAddress: "/contact", linkText: "Contact Page" }])}
+        <div className="font-bold">
+          {addHighlightsLinksAndNewLines(footerData.attributes.bodyText, [{ linkAddress: "/contact", linkText: "Contact Page" }])}
+        </div>
         <div className="mt-8 flex flex-wrap gap-3 sm:w-9/12 sm:gap-0">
           {footerData.attributes.accoladesOrSponsorImages?.data &&
             footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (

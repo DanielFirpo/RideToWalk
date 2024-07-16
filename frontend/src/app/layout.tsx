@@ -100,10 +100,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
-      <body className="bg-slate-200 blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
+      <body className="bg-white blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Navbar></Navbar>
-        <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-3xl shadow-slate-500">
+        <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-xl shadow-slate-500">
           {children}
           <Footer></Footer>
         </div>
