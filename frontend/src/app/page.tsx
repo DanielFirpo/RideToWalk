@@ -91,7 +91,7 @@ export default async function Home() {
             </span>
           </div>
         </section>
-        <section className="mt-16 flex flex-col lg:flex-row">
+        <section className="flex flex-col sm:mt-16 lg:flex-row">
           <div
             className="w-auto bg-contain bg-left bg-no-repeat px-8 py-24 pr-10 sm:ml-8 sm:mr-8 sm:pl-24 lg:ml-32 lg:mr-0 lg:w-1/2 lg:bg-right lg:pl-0"
             style={{
@@ -119,7 +119,7 @@ export default async function Home() {
               </Link>
             )}
           </div>
-          <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 pt-24 text-white sm:ml-14 sm:mr-14 lg:ml-6 lg:w-1/2">
+          <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 text-white sm:ml-14 sm:mr-14 sm:pt-24 lg:ml-6 lg:w-1/2">
             <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
               <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=1"} type="video/webm" />
               Your browser does not support the video tag.
@@ -176,9 +176,9 @@ export default async function Home() {
           </div>
         </section>
         <section>
-          <div className="my-24 w-auto px-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
+          <div className="my-12 w-auto px-10 text-center sm:my-24 sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
             <h2 className="inline pr-2 font-baskerville text-lg sm:block sm:pr-7 sm:text-xl sm:leading-normal">
-              <div className="mx-32 mb-6 border-b border-metalicCopper"></div>
+              <div className="mx-auto mb-6 w-9/12  border-b border-metalicCopper"></div>
               {pageData.attributes.ridersSectionText1}
             </h2>
             <div className="flex flex-wrap justify-center gap-5 py-8">
@@ -198,7 +198,7 @@ export default async function Home() {
             </div>
             <h2 className="inline pr-2 font-baskerville text-lg sm:block sm:pr-7 sm:text-xl sm:leading-normal">
               {pageData.attributes.ridersSectionText2}
-              <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
+              <div className="mx-auto mt-6 w-9/12 border-b border-metalicCopper"></div>
             </h2>
           </div>
         </section>
@@ -337,10 +337,10 @@ export default async function Home() {
           <HomepageCarousel images={pageData.attributes.carouselImages.data}></HomepageCarousel>
         </section>
         <section>
-          <div className="my-20 w-auto px-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
+          <div className="my-10 w-auto px-10 text-center sm:my-20 sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
             <h2 className="inline pr-2 font-baskerville text-2xl sm:block sm:pr-7 sm:text-3xl sm:leading-normal">
               {pageData.attributes.testimonialSectionHeader}
-              <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
+              <div className="mx-auto mt-6 w-9/12 border-b border-metalicCopper"></div>
             </h2>
             <div className="mt-6 flex flex-col lg:flex-row">
               <div className="flex w-fit flex-col items-center justify-center p-3 text-white lg:w-1/2">
