@@ -100,7 +100,7 @@ export default async function Home() {
           >
             {pageData.attributes.missionStatementTitle.split("\\n").map((line) => {
               return (
-                <h2 key={line} className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
+                <h2 key={line} className="inline pr-2 font-baskerville text-2xl sm:block sm:pr-7 sm:text-3xl sm:leading-normal">
                   {line}
                 </h2>
               );
@@ -121,7 +121,7 @@ export default async function Home() {
           </div>
           <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 text-white sm:ml-14 sm:mr-14 lg:ml-6 lg:w-1/2">
             <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
-              <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=1"} type="video/mp4" />
+              <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=1"} type="video/webm" />
               Your browser does not support the video tag.
             </video>
             <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
@@ -169,13 +169,15 @@ export default async function Home() {
               })}
             </ul>
             <Link href={pageData.attributes.detailedAboutSectionButton.linkAddress} target="_blank">
-              <Button variant="secondary">{pageData.attributes.detailedAboutSectionButton.linkText}</Button>
+              <Button className="mt-10" variant="secondary">
+                {pageData.attributes.detailedAboutSectionButton.linkText}
+              </Button>
             </Link>
           </div>
         </section>
         <section>
           <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
-            <h2 className="inline pr-2 font-baskerville text-lg leading-snug sm:block sm:pr-7 sm:text-xl">
+            <h2 className="inline pr-2 font-baskerville text-lg sm:block sm:pr-7 sm:text-xl sm:leading-normal">
               <div className="mx-32 mb-6 border-b border-metalicCopper"></div>
               {pageData.attributes.ridersSectionText1}
             </h2>
@@ -194,7 +196,7 @@ export default async function Home() {
                 );
               })}
             </div>
-            <h2 className="inline pr-2 font-baskerville text-lg leading-snug sm:block sm:pr-7 sm:text-xl">
+            <h2 className="inline pr-2 font-baskerville text-lg sm:block sm:pr-7 sm:text-xl sm:leading-normal">
               {pageData.attributes.ridersSectionText2}
               <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
             </h2>
@@ -336,14 +338,14 @@ export default async function Home() {
         </section>
         <section>
           <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
-            <h2 className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
+            <h2 className="inline pr-2 font-baskerville text-2xl sm:block sm:pr-7 sm:text-3xl sm:leading-normal">
               {pageData.attributes.testimonialSectionHeader}
               <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
             </h2>
             <div className="mt-6 flex flex-col lg:flex-row">
               <div className="flex w-fit flex-col items-center justify-center p-3 text-white lg:w-1/2">
                 <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
-                  <source src={pageData.attributes.testimonialVideo1.data.attributes.url + "#t=1"} type="video/mp4" />
+                  <source src={pageData.attributes.testimonialVideo1.data.attributes.url + "#t=1"} type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="flex min-h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">

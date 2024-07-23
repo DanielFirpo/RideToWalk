@@ -66,7 +66,7 @@ export default async function Footer() {
         <div className="font-bold">
           {addHighlightsLinksAndNewLines(footerData.attributes.bodyText, [{ linkAddress: "/contact", linkText: "Contact Page" }])}
         </div>
-        <div className="mt-8 flex flex-wrap gap-3 sm:w-9/12 sm:gap-0">
+        <div className="mt-8 flex flex-wrap items-stretch gap-3 sm:w-9/12 sm:gap-0">
           {footerData.attributes.accoladesOrSponsorImages?.data &&
             footerData.attributes.accoladesOrSponsorImages?.data.map((img) => (
               <div className="sm:basis-1/3" key={img.attributes.url}>
@@ -87,14 +87,14 @@ export default async function Footer() {
             </Button>
           </Link>
         )}
-        <div className="mb-8 flex flex-wrap gap-6 text-sm sm:mr-32">
+        <div className="flex flex-wrap gap-6 text-sm sm:mr-32">
           {footerData.attributes.links.map((link) => (
             <Link className="text-nowrap py-3" key={link.linkText} href={link.linkAddress}>
               {link.linkText}
             </Link>
           ))}
         </div>
-        <div className="pt-10 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
+        <div className="mt-20 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
       </div>
     </footer>
   );
