@@ -91,9 +91,9 @@ export default async function Home() {
             </span>
           </div>
         </section>
-        <section className="mt-8 flex flex-col lg:flex-row">
+        <section className="mt-16 flex flex-col lg:flex-row">
           <div
-            className="w-auto bg-contain bg-left bg-no-repeat px-8 pb-24 pr-10 pt-24 sm:ml-8 sm:mr-8 sm:pl-24 lg:ml-32 lg:mr-0 lg:w-1/2 lg:bg-cover lg:bg-right lg:pl-0"
+            className="w-auto bg-contain bg-left bg-no-repeat px-8 pb-24 pr-10 pt-24 sm:ml-8 sm:mr-8 sm:pl-24 lg:ml-32 lg:mr-0 lg:w-1/2 lg:bg-right lg:pl-0"
             style={{
               backgroundImage: missionStatementBackgroundImage,
             }}
@@ -131,16 +131,16 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="flex flex-col items-center gap-5 md:flex-row">
+        <section className="flex flex-wrap items-center justify-center gap-5 md:flex-row">
           <Image
-            className="mt-auto aspect-square w-[80%] lg:w-2/5 lg:min-w-[40%]"
+            className="mt-auto aspect-square w-[80%] lg:w-2/5 lg:basis-4/12"
             src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
             alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
             objectFit="contain"
           />
-          <div className="mx-4 p-6 font-grotesk font-medium leading-relaxed lg:mx-14">
+          <div className="mx-4 flex-grow basis-6/12 p-6 font-grotesk font-medium leading-relaxed">
             {pageData.attributes.detailedAboutSectionText.split("\\n").map((line) => {
               const regex = /\\h(.*?)\\h/g;
               const parts = line.split(regex);
@@ -174,7 +174,7 @@ export default async function Home() {
           </div>
         </section>
         <section>
-          <div className="w-auto px-10 py-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
+          <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
             <h2 className="inline pr-2 font-baskerville text-lg leading-snug sm:block sm:pr-7 sm:text-xl">
               <div className="mx-32 mb-6 border-b border-metalicCopper"></div>
               {pageData.attributes.ridersSectionText1}
@@ -335,7 +335,7 @@ export default async function Home() {
           <HomepageCarousel images={pageData.attributes.carouselImages.data}></HomepageCarousel>
         </section>
         <section>
-          <div className="w-auto px-10 pb-12 pt-12 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
+          <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
             <h2 className="inline pr-2 font-baskerville text-2xl leading-snug sm:block sm:pr-7 sm:text-3xl">
               {pageData.attributes.testimonialSectionHeader}
               <div className="mx-32 mt-6 border-b border-metalicCopper"></div>
@@ -346,7 +346,7 @@ export default async function Home() {
                   <source src={pageData.attributes.testimonialVideo1.data.attributes.url + "#t=1"} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
+                <div className="flex min-h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
                   <p className="text-center font-grotesk text-xs font-medium leading-relaxed text-black sm:text-sm">
                     {pageData.attributes.testimonialVideo1.data.attributes.caption}
                   </p>
@@ -357,7 +357,7 @@ export default async function Home() {
                   <source src={pageData.attributes.testimonialVideo2.data.attributes.url + "#t=1"} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
+                <div className="flex min-h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
                   <p className="text-center font-grotesk text-xs font-medium leading-relaxed text-black sm:text-sm">
                     {pageData.attributes.testimonialVideo2.data.attributes.caption}
                   </p>
