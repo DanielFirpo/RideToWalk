@@ -356,7 +356,7 @@ export default async function Home() {
               </div>
               <div className="flex w-fit flex-col items-center justify-center p-3 text-white lg:w-1/2">
                 <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
-                  <source src={pageData.attributes.testimonialVideo2.data.attributes.url + "#t=1"} type="video/mp4" />
+                  <source src={pageData.attributes.testimonialVideo2.data.attributes.url + "#t=1"} type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="flex min-h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
