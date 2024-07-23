@@ -93,7 +93,7 @@ export default async function Home() {
         </section>
         <section className="mt-16 flex flex-col lg:flex-row">
           <div
-            className="w-auto bg-contain bg-left bg-no-repeat px-8 pb-24 pr-10 pt-24 sm:ml-8 sm:mr-8 sm:pl-24 lg:ml-32 lg:mr-0 lg:w-1/2 lg:bg-right lg:pl-0"
+            className="w-auto bg-contain bg-left bg-no-repeat px-8 py-24 pr-10 sm:ml-8 sm:mr-8 sm:pl-24 lg:ml-32 lg:mr-0 lg:w-1/2 lg:bg-right lg:pl-0"
             style={{
               backgroundImage: missionStatementBackgroundImage,
             }}
@@ -119,7 +119,7 @@ export default async function Home() {
               </Link>
             )}
           </div>
-          <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 text-white sm:ml-14 sm:mr-14 lg:ml-6 lg:w-1/2">
+          <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 pt-24 text-white sm:ml-14 sm:mr-14 lg:ml-6 lg:w-1/2">
             <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
               <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=1"} type="video/webm" />
               Your browser does not support the video tag.
@@ -131,7 +131,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="flex flex-wrap items-center justify-center gap-5 md:flex-row">
+        <section className="-mt-5 flex flex-wrap items-center justify-center gap-5 md:flex-row">
           <Image
             className="mt-auto aspect-square w-[80%] lg:w-2/5 lg:basis-4/12"
             src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
@@ -176,7 +176,7 @@ export default async function Home() {
           </div>
         </section>
         <section>
-          <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
+          <div className="my-24 w-auto px-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-24">
             <h2 className="inline pr-2 font-baskerville text-lg sm:block sm:pr-7 sm:text-xl sm:leading-normal">
               <div className="mx-32 mb-6 border-b border-metalicCopper"></div>
               {pageData.attributes.ridersSectionText1}
@@ -337,7 +337,7 @@ export default async function Home() {
           <HomepageCarousel images={pageData.attributes.carouselImages.data}></HomepageCarousel>
         </section>
         <section>
-          <div className="w-auto px-10 py-32 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
+          <div className="my-20 w-auto px-10 text-center sm:ml-8 sm:mr-8 lg:mr-0 lg:bg-cover lg:bg-right lg:px-14">
             <h2 className="inline pr-2 font-baskerville text-2xl sm:block sm:pr-7 sm:text-3xl sm:leading-normal">
               {pageData.attributes.testimonialSectionHeader}
               <div className="mx-32 mt-6 border-b border-metalicCopper"></div>

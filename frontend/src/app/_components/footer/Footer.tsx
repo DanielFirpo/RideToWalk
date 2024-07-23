@@ -82,7 +82,7 @@ export default async function Footer() {
         </div>
         {footerData.attributes.footerButton && (
           <Link href={footerData.attributes.footerButton.linkAddress}>
-            <Button variant="secondary" size="large" className="mb-10">
+            <Button variant="secondary" size="large" className="mt-10">
               {footerData.attributes.footerButton.linkText}
             </Button>
           </Link>
