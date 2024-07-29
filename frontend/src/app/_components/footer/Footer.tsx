@@ -87,12 +87,12 @@ export default async function Footer() {
             </Button>
           </Link>
         )}
-        <div className="flex flex-wrap gap-6 text-sm sm:mr-32">
-          {footerData.attributes.links.map((link) => (
-            <Link className="text-nowrap py-3" key={link.linkText} href={link.linkAddress}>
+        <div className="flex flex-wrap gap-6 py-3 text-sm sm:mr-32">
+          {/* {footerData.attributes.links.map((link) => (
+            <Link className="text-nowrap " key={link.linkText} href={link.linkAddress}>
               {link.linkText}
             </Link>
-          ))}
+          ))} */}
         </div>
         <div className="mt-20 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
       </div>

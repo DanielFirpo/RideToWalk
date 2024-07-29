@@ -193,6 +193,7 @@ export default async function Home() {
                     alt={image.attributes.alternativeText}
                     width={image.attributes.width}
                     height={image.attributes.height}
+                    objectFit="scale-down"
                   />
                 );
               })}
