@@ -46,6 +46,9 @@ export interface Homepage {
     testimonialSectionHeader?: string;
     testimonialVideo1: { data: Media };
     testimonialVideo2: { data: Media };
+    testimonialVideo1Fallback: { data: Media };
+    testimonialVideo2Fallback: { data: Media };
+    featuredVideoFallback: { data: Media };
     locale: string;
     localizations?: { data: Homepage[] };
   };
@@ -85,6 +88,9 @@ export interface Homepage_Plain {
   testimonialSectionHeader?: string;
   testimonialVideo1: Media_Plain;
   testimonialVideo2: Media_Plain;
+  testimonialVideo1Fallback: Media_Plain;
+  testimonialVideo2Fallback: Media_Plain;
+  featuredVideoFallback: Media_Plain;
   locale: string;
   localizations?: Homepage_Plain[];
 }
@@ -124,6 +130,9 @@ export interface Homepage_NoRelations {
   testimonialSectionHeader?: string;
   testimonialVideo1: number;
   testimonialVideo2: number;
+  testimonialVideo1Fallback: number;
+  testimonialVideo2Fallback: number;
+  featuredVideoFallback: number;
   locale: string;
   localizations?: Homepage[];
 }
@@ -163,6 +172,9 @@ export interface Homepage_AdminPanelLifeCycle {
   testimonialSectionHeader?: string;
   testimonialVideo1: AdminPanelRelationPropertyModification<Media_Plain>;
   testimonialVideo2: AdminPanelRelationPropertyModification<Media_Plain>;
+  testimonialVideo1Fallback: AdminPanelRelationPropertyModification<Media_Plain>;
+  testimonialVideo2Fallback: AdminPanelRelationPropertyModification<Media_Plain>;
+  featuredVideoFallback: AdminPanelRelationPropertyModification<Media_Plain>;
   locale: string;
   localizations?: Homepage[];
 }

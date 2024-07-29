@@ -340,11 +340,12 @@
       "default": "Ride To Walk brings together dedicated volunteers, instructors, therapists, and the rider’s family members."
     },
     "ridersSectionImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -370,6 +371,32 @@
       "default": "Listen to these short testimonials from two of our rider’s mothers and how much this program means to their families."
     },
     "testimonialVideo1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "testimonialVideo2": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "testimonialVideo1Fallback": {
       "allowedTypes": [
         "videos"
       ],
@@ -382,7 +409,20 @@
       },
       "required": true
     },
-    "testimonialVideo2": {
+    "testimonialVideo2Fallback": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "featuredVideoFallback": {
       "allowedTypes": [
         "videos"
       ],

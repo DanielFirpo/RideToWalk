@@ -44,7 +44,7 @@ export default async function Home() {
                 filter: `brightness(${darkenPecentage}%)`,
               }}
             >
-              <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" />
+              {/* <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" /> */}
               {/* fallback image: */}
             </video>
             <div
@@ -122,6 +122,7 @@ export default async function Home() {
           <div className="mx-4 flex w-fit flex-col items-center justify-center p-6 text-white sm:ml-14 sm:mr-14 sm:pt-24 lg:ml-6 lg:w-1/2">
             <video controls preload="metadata" aria-label="Video player" width="100%" className="aspect-video">
               <source src={pageData.attributes.featuredVideo.data.attributes.url + "#t=1"} type="video/webm" />
+              <source src={pageData.attributes.featuredVideoFallback.data.attributes.url} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="flex h-16 w-full items-center justify-center bg-eggshell px-1 sm:px-16">
