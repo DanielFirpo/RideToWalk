@@ -132,9 +132,9 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section className="-mt-5 flex flex-wrap items-center justify-center gap-5 md:flex-row">
+        <section className="mt-9 flex flex-wrap items-center justify-center gap-5 md:flex-row">
           <Image
-            className="mt-auto aspect-square w-[80%] lg:w-2/5 lg:basis-4/12"
+            className="w-[80%] max-w-[500px] lg:w-2/5 lg:basis-4/12"
             src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
             alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
