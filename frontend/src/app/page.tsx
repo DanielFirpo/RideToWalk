@@ -28,7 +28,7 @@ export default async function Home() {
         <section className="w-full bg-black">
           <div className="relative">
             <video
-              className="hidden w-full sm:block"
+              className="hidden w-full"
               width={pageData.attributes.heroVideo.data.attributes.width}
               height={pageData.attributes.heroVideo.data.attributes.height}
               preload="metadata"
@@ -48,7 +48,7 @@ export default async function Home() {
               {/* fallback image: */}
             </video>
             <div
-              className="h-auto w-full sm:hidden"
+              className="h-auto w-full"
               style={{
                 aspectRatio: "2 / 1",
                 background: heroFallbackImage,
