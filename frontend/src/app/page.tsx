@@ -188,7 +188,7 @@ export default async function Home() {
                   <Image
                     style={{ width: 95 / (pageData.attributes.ridersSectionImages?.data.length ?? 1) + "%" }}
                     key={image.attributes.url}
-                    className="mt-auto aspect-[31/39] max-h-[450px] w-[30%] min-w-[300px] border-2 border-red-600"
+                    className="mt-auto aspect-[31/39] max-h-[450px] w-[30%] min-w-[300px] border-2 border-terracottaOrange"
                     src={image.attributes.url}
                     alt={image.attributes.alternativeText}
                     width={image.attributes.width}
