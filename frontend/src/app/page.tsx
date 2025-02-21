@@ -44,7 +44,7 @@ export default async function Home() {
                 filter: `brightness(${darkenPecentage}%)`,
               }}
             >
-              {/* <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" /> */}
+              <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" />
               {/* fallback image: */}
             </video>
             <div
