@@ -47,7 +47,7 @@ export default async function Home() {
               <source src={pageData.attributes.heroVideo.data.attributes.url} type="video/webm" />
               {/* fallback image: */}
             </video>
-            <div
+            {/* <div
               className="h-auto w-full"
               style={{
                 aspectRatio: "2 / 1",
@@ -56,7 +56,7 @@ export default async function Home() {
                 backgroundPosition: "50% 0",
                 filter: `brightness(${darkenPecentage}%)`,
               }}
-            ></div>
+            ></div> */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-full w-[90%] sm:w-[68%]">
               <div className="pointer-events-auto absolute -left-1/2 -top-1/2 mb-8 flex h-full w-full flex-col items-center justify-center sm:-top-[60%] sm:mb-28">
                 {pageData.attributes.heroImageText.split("\\n").map((line) => {
