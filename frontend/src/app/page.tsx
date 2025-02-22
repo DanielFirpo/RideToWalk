@@ -28,7 +28,7 @@ export default async function Home() {
         <section className="w-full bg-black">
           <div className="relative">
             <video
-              className="hidden w-full"
+              className="w-full"
               width={pageData.attributes.heroVideo.data.attributes.width}
               height={pageData.attributes.heroVideo.data.attributes.height}
               preload="metadata"
