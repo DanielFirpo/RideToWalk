@@ -6,8 +6,6 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { Button } from "../shadcn/button";
 import Image from "next/image";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../shadcn/sheet";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@components/shadcn/accordion";
 import MobileNavMenu from "./MobileNavMenu";
 
 export type LinkCategory =
@@ -141,7 +139,7 @@ export default async function Navbar() {
         <div className="mx-auto flex h-[80px] w-full items-center justify-center bg-rustyBrown pr-5 xl:pr-16 1.5xl:pr-8">
           <div className="hidden w-full items-center justify-center md:flex 1.5xl:justify-between">
             <div className="min-w-52"></div>
-            <NavbarLinks navData={navData}></NavbarLinks>
+            <NavbarLinks linkCategories={linkCategories} navData={navData}></NavbarLinks>
             <div className="hidden max-h-10 min-w-40 flex-row-reverse flex-wrap gap-3 overflow-hidden 1.5xl:flex">
               {navData?.attributes.donateButton && (
                 <Link href={navData?.attributes.donateButton?.linkAddress} target="_blank">

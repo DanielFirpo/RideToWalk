@@ -1,6 +1,5 @@
 "use client";
 
-import { fetchAPI } from "@/src/app/_utils/strapiApi";
 import { Navbar as NavbarType } from "@contentTypes/navbar/content-types/navbar/navbar";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "../shadcn/sheet";

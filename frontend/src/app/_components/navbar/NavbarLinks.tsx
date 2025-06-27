@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Navbar as NavbarType } from "@contentTypes/navbar/content-types/navbar/navbar";
+import { LinkCategory } from "@components/navbar/Navbar";
 
 import {
   NavigationMenu,
@@ -15,23 +16,7 @@ import {
 
 // Unfortunately we need a client component in order to run the javascript that handles the drop down menus,
 // but at least the whole navbar doesn't need to be CSR, just the nav link section. That's what this component is for.
-export default function NavbarLinks({ navData }: { navData?: NavbarType }) {
-  type LinkCategory =
-    | "homeLinks"
-    | "aboutUsLinks"
-    | "takeActionLinks"
-    | "ridingProgramLinks"
-    | "eventsAndActivitiesLinks"
-    | "horseBoardingLinks";
-  const linkCategories: LinkCategory[] = [
-    "homeLinks",
-    "aboutUsLinks",
-    "takeActionLinks",
-    "ridingProgramLinks",
-    "eventsAndActivitiesLinks",
-    "horseBoardingLinks",
-  ];
-
+export default function NavbarLinks({ linkCategories, navData }: { linkCategories: LinkCategory[]; navData?: NavbarType }) {
   return (
     <>
       <NavigationMenu>
