@@ -1,3 +1,5 @@
+import path from "path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
@@ -13,6 +15,20 @@ const nextConfig = {
                 port: ''
             }
         ],
+    },
+    webpack(config) {
+        config.resolve.alias = {
+            ...(config.resolve.alias || {}),
+            "@": path.resolve(process.cwd()),
+            "@components": path.resolve(process.cwd(), "src/app/_components"),
+            "@contentTypes": path.resolve(process.cwd(), "../backend/src/api"),
+            "@strapiTypes": path.resolve(process.cwd(), "../backend/src/common"),
+            "@pageSectionTypes": path.resolve(
+                process.cwd(),
+                "../backend/src/components/page-section-contents/interfaces"
+            ),
+        };
+        return config;
     },
 };
 
