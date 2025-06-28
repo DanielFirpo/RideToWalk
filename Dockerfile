@@ -22,24 +22,21 @@ ENV NEXT_PUBLIC_FRONTEND_URL=$NEXT_PUBLIC_FRONTEND_URL
 ENV NODE_ENV=$NODE_ENV
 ENV RESEND_KEY=$RESEND_KEY
 
-# Copy backend folder first (needed for types)
+# Copy both frontend and backend folders into the container
+COPY ./frontend ./frontend
 COPY ./backend ./backend
 
-# Copy frontend package.json and lockfile first (for npm install)
-COPY ./frontend/package*.json ./frontend/
-
-# Install frontend dependencies
+# Change to the frontend directory
 WORKDIR /app/frontend
+
+# Install dependencies
 RUN npm install
 
-# Now copy the rest of the frontend source files
-COPY ./frontend ./frontend
-
-# Build the frontend app
+# Build the Next.js app
 RUN npm run build
 
-# Expose port for frontend app
+# Expose the port Next.js runs on
 EXPOSE 3000
 
-# Run the app
+# Start the Next.js app
 CMD ["npm", "start"]
