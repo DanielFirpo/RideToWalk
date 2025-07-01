@@ -80,7 +80,7 @@ export default async function RootLayout({
     "@type": "Organization",
     name: "Ride to Walk",
     url: process.env.NEXT_PUBLIC_FRONTEND_URL,
-    logo: process.env.NEXT_PUBLIC_FRONTEND_URL + metaData.attributes.openGraphImage?.data.attributes.url,
+    logo: metaData.attributes.openGraphImage?.data.attributes.url,
     description: metaData.attributes.homepageDescription,
     address: {
       "@type": "PostalAddress",
