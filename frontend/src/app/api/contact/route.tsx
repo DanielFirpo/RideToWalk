@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       const resend = new Resend(process.env.RESEND_KEY);
 
       const email = await resend.emails.send({
-        from: `${result.data.firstName} ${result.data.lastName} <onboarding@resend.dev>`,
+        from: `${result.data.firstName} ${result.data.lastName} <${process.env.CONTACT_FORM_FROM_ADDRESS}>`,
         to: [process.env.CONTACT_FORM_TO_ADDRESS ?? ""],
         subject: `New RideToWalk.org Contact Form Submission from '${result.data.firstName} ${result.data.lastName}' <${result.data.email}>`,
         react: (
