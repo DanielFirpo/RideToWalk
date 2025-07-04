@@ -1671,6 +1671,39 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiRedirectRedirect extends Schema.CollectionType {
+  collectionName: 'redirects';
+  info: {
+    singularName: 'redirect';
+    pluralName: 'redirects';
+    displayName: 'redirect';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    from: Attribute.String & Attribute.Required & Attribute.Unique;
+    to: Attribute.String & Attribute.Required & Attribute.Unique;
+    isPermanent: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::redirect.redirect',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::redirect.redirect',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1695,6 +1728,7 @@ declare module '@strapi/types' {
       'api::meta-data.meta-data': ApiMetaDataMetaData;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::page.page': ApiPagePage;
+      'api::redirect.redirect': ApiRedirectRedirect;
     }
   }
 }
