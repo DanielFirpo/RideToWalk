@@ -1,7 +1,24 @@
 import path from "path";
 
+import 'dotenv/config'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async redirects() {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/redirects", {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.STRAPI_TOKEN ? process.env.STRAPI_TOKEN : process.env.NEXT_PUBLIC_API_TOKEN}`,
+            },
+        });
+        const data = (await response.json()).data;
+
+        return data.map((redirect) => ({
+            source: `/${redirect.attributes.from}`,
+            destination: `/${redirect.attributes.to}`,
+            permanent: redirect.attributes.isPermanent,
+        }));
+    },
     images: {
         remotePatterns: [
             {

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "redirect",
     "pluralName": "redirects",
-    "displayName": "redirect"
+    "displayName": "redirect",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,7 +20,7 @@
     "to": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "isPermanent": {
       "type": "boolean",

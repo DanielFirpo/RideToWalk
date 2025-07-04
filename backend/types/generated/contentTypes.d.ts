@@ -1677,13 +1677,14 @@ export interface ApiRedirectRedirect extends Schema.CollectionType {
     singularName: 'redirect';
     pluralName: 'redirects';
     displayName: 'redirect';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     from: Attribute.String & Attribute.Required & Attribute.Unique;
-    to: Attribute.String & Attribute.Required & Attribute.Unique;
+    to: Attribute.String & Attribute.Required;
     isPermanent: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
