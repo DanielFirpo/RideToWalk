@@ -35,8 +35,7 @@
       },
       "type": "string",
       "required": true,
-      "default": "%s | Ride to Walk - Therapeutic Horseback Riding in Penryn, CA",
-      "minLength": 20
+      "default": "%s | Ride to Walk - Therapeutic Horseback Riding in Penryn, CA"
     },
     "homepageDescription": {
       "pluginOptions": {

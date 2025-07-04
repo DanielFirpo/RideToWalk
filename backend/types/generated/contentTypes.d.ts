@@ -1328,9 +1328,6 @@ export interface ApiMetaDataMetaData extends Schema.SingleType {
           localized: true;
         };
       }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 20;
-      }> &
       Attribute.DefaultTo<'%s | Ride to Walk - Therapeutic Horseback Riding in Penryn, CA'>;
     homepageDescription: Attribute.Text &
       Attribute.Required &
