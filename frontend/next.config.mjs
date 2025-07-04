@@ -14,8 +14,8 @@ const nextConfig = {
         const data = (await response.json()).data;
 
         return data.map((redirect) => ({
-            source: `/${redirect.attributes.from}`,
-            destination: `/${redirect.attributes.to}`,
+            source: `${redirect.attributes.from}`,
+            destination: `${redirect.attributes.to}`,
             permanent: redirect.attributes.isPermanent,
         }));
     },

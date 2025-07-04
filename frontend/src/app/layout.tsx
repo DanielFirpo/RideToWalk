@@ -65,6 +65,9 @@ export async function generateMetadata(): Promise<Metadata> {
       "Penryn, CA",
       "Non-profit organization",
     ],
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    },
   };
 }
 

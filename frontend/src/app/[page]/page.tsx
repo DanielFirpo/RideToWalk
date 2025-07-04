@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: page?.attributes.title,
     description: page?.attributes.description,
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_FRONTEND_URL + "/" + page?.attributes.slug,
+    },
   };
 }
 

@@ -15,10 +15,20 @@ export default function robots(): MetadataRoute.Robots {
   }
 
   return {
-    rules: {
-      userAgent: "*",
-      ...(process.env.NEXT_PUBLIC_IS_STAGING ? { disallow: "/" } : { allow: "/" }),
-    },
+    rules: process.env.NEXT_PUBLIC_IS_STAGING
+      ? [
+        {
+          userAgent: "*",
+          disallow: "/",
+        },
+      ]
+      : [
+        {
+          userAgent: "*",
+          allow: "/",
+          disallow: "/cdn-cgi/l/email-protection",
+        },
+      ],
     sitemap: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/sitemap.xml`,
   };
 }

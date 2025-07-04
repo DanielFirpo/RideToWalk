@@ -11,6 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: pageData?.attributes.pageTitle,
     description: pageData?.attributes.pageDescription,
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_FRONTEND_URL + "/contact",
+    },
   };
 }
 
