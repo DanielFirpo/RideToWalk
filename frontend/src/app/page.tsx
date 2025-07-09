@@ -134,12 +134,11 @@ export default async function Home() {
         </section>
         <section className="mt-9 flex flex-wrap items-center justify-center gap-5 md:flex-row">
           <Image
-            className="w-[80%] max-w-[500px] md:mr-11 lg:w-2/5 lg:basis-4/12"
+            className="h-auto w-[80%] max-w-[500px] object-cover md:mr-11 lg:w-2/5 lg:basis-4/12"
             src={pageData.attributes.detailedAboutSectionImage.data.attributes.url}
             alt={pageData.attributes.detailedAboutSectionImage.data.attributes.alternativeText}
             width={pageData.attributes.detailedAboutSectionImage.data.attributes.width}
             height={pageData.attributes.detailedAboutSectionImage.data.attributes.height}
-            objectFit="contain"
           />
           <div className="mx-4 flex-grow basis-6/12 p-6 font-grotesk font-medium leading-relaxed">
             {pageData.attributes.detailedAboutSectionText.split("\\n").map((line) => {
@@ -188,12 +187,11 @@ export default async function Home() {
                   <Image
                     style={{ width: 95 / (pageData.attributes.ridersSectionImages?.data.length ?? 1) + "%" }}
                     key={image.attributes.url}
-                    className="mt-auto aspect-[31/39] max-h-[450px] w-[30%] min-w-[300px] border-2 border-terracottaOrange"
+                    className="mt-auto aspect-[31/39] max-h-[450px] w-[30%] min-w-[300px] border-2 border-terracottaOrange object-cover"
                     src={image.attributes.url}
                     alt={image.attributes.alternativeText}
                     width={image.attributes.width}
                     height={image.attributes.height}
-                    objectFit="scale-down"
                   />
                 );
               })}
