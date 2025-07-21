@@ -5,6 +5,7 @@ import Navbar from "./_components/navbar/Navbar";
 import Footer from "./_components/footer/Footer";
 import { fetchAPI } from "./_utils/strapiApi";
 import { MetaData as MetaDataType } from "@contentTypes/meta-data/content-types/meta-data/meta-data";
+import { PostHogProvider } from "./_components/PostHogProvider";
 
 const baskerville = Libre_Baskerville({
   weight: ["400", "700"],
@@ -102,14 +103,16 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
+    <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>  
       <body className="bg-white blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <Navbar></Navbar>
-        <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-xl shadow-slate-500">
-          {children}
-          <Footer></Footer>
-        </div>
+        <PostHogProvider>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+          <Navbar></Navbar>
+          <div className="mx-auto min-h-screen max-w-[1366px] overflow-x-hidden bg-white shadow-xl shadow-slate-500">
+            {children}
+            <Footer></Footer>
+          </div>
+        </PostHogProvider>
       </body>
     </html>
   );

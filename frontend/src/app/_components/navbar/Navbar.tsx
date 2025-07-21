@@ -70,6 +70,7 @@ export default async function Navbar() {
                 <address className="whitespace-nowrap text-nowrap not-italic">
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     href="https://www.google.com/maps/place/Ride+To+Walk/@38.8480856,-121.2161017,15z/data=!4m2!3m1!1s0x0:0x226fd13fb123fc4a?sa=X&ved=1t:2428&ictx=111"
                   >
                     {navData?.attributes.address}
@@ -86,49 +87,97 @@ export default async function Navbar() {
               </div>
               <div className="ml-6 hidden items-center justify-between gap-2 lg:flex">
                 {navData.attributes.facebookLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.facebookLink} aria-label="Facebook">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.facebookLink}
+                    aria-label="Facebook"
+                  >
                     <span className="icon-[fa-brands--facebook-f] h-[1.2rem] w-[1.2rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.instagramLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.instagramLink} aria-label="Instagram">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.instagramLink}
+                    aria-label="Instagram"
+                  >
                     <span className="icon-[mdi--instagram] h-[1.4rem] w-[1.4rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.tiktokLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.tiktokLink} aria-label="TikTok">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.tiktokLink}
+                    aria-label="TikTok"
+                  >
                     <span className="icon-[ic--baseline-tiktok] h-[1.6rem] w-[1.6rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.youtubeLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.youtubeLink} aria-label="YouTube">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.youtubeLink}
+                    aria-label="YouTube"
+                  >
                     <span className="icon-[mdi--youtube] h-7 w-7 text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.googleLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.googleLink} aria-label="Google">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.googleLink}
+                    aria-label="Google"
+                  >
                     <span className="icon-[bi--google] h-[1.1rem] w-[1.1rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.twitterLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.twitterLink} aria-label="Twitter">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.twitterLink}
+                    aria-label="Twitter"
+                  >
                     <span className="icon-[pajamas--twitter] h-[1.3rem] w-[1.3rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.linkedInLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.linkedInLink} aria-label="LinkedIn">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.linkedInLink}
+                    aria-label="LinkedIn"
+                  >
                     <span className="icon-[ri--linkedin-fill] mb-0.5 h-[1.6rem] w-[1.6rem] text-terracottaOrange"></span>
                   </a>
                 )}
 
                 {navData.attributes.snapchatLink && (
-                  <a target="_blank" className="flex items-center" href={navData.attributes.snapchatLink} aria-label="Snapchat">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center"
+                    href={navData.attributes.snapchatLink}
+                    aria-label="Snapchat"
+                  >
                     <span className="icon-[ri--snapchat-fill] h-6 w-6 text-terracottaOrange"></span>
                   </a>
                 )}
