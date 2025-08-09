@@ -27,7 +27,7 @@ const config = {
       },
       screens: {
         "1.5xl": "1350px",
-        devOnlyDeleteAfterDone: "320px",
+        // devOnlyDeleteAfterDone: "320px",
       },
       keyframes: {
         "accordion-down": {

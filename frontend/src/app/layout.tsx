@@ -104,7 +104,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
-      <body className="bg-white blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
+      <body className="bg-white">
         <PostHogProvider>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
           <Navbar></Navbar>
