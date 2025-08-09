@@ -65,6 +65,13 @@ export default async function Footer() {
         <address className="mb-5 not-italic">{footerData.attributes.address}</address>
         <div className="font-bold">
           {addHighlightsLinksAndNewLines(footerData.attributes.bodyText, [{ linkAddress: "/contact", linkText: "Contact Page" }])}
+          <div className="flex flex-wrap gap-6 py-3 text-sm sm:mr-32">
+            {footerData.attributes.links.map((link) => (
+              <Link className="text-nowrap text-metalicCopper" key={link.linkText} href={link.linkAddress}>
+                {link.linkText}
+              </Link>
+            ))}
+          </div>
         </div>
         <div className="mt-8 flex flex-wrap items-stretch gap-3 sm:w-9/12 sm:gap-0">
           {footerData.attributes.accoladesOrSponsorImages?.data &&
@@ -87,13 +94,7 @@ export default async function Footer() {
             </Button>
           </Link>
         )}
-        <div className="flex flex-wrap gap-6 py-3 text-sm sm:mr-32">
-          {/* {footerData.attributes.links.map((link) => (
-            <Link className="text-nowrap " key={link.linkText} href={link.linkAddress}>
-              {link.linkText}
-            </Link>
-          ))} */}
-        </div>
+
         <div className="mt-20 text-xs sm:mr-32">{footerData.attributes.copyrightNotice}</div>
       </div>
     </footer>

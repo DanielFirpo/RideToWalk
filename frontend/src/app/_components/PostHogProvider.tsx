@@ -9,7 +9,6 @@ interface PostHogProviderProps {
 }
 
 export function PostHogProvider({ children }: PostHogProviderProps) {
-  console.log("initializing posthog with keyt", process.env.NEXT_PUBLIC_POSTHOG_KEY);
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
       api_host: "/ingest",

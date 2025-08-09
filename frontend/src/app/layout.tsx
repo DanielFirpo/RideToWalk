@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: metaData.attributes.homepageDescription,
     openGraph: {
       type: "website",
-      // url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+      url: process.env.NEXT_PUBLIC_FRONTEND_URL,
       title: "Ride to Walk",
       description: metaData.attributes.openGraphDescription,
       siteName: "Ride to Walk",
@@ -103,7 +103,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>  
+    <html lang="en" className={`${baskerville.variable} ${alatsi.variable} ${grotesk.variable} ${baskervilleItalic.variable}`}>
       <body className="bg-white blur-3xl filter devOnlyDeleteAfterDone:blur-none devOnlyDeleteAfterDone:filter-none">
         <PostHogProvider>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
